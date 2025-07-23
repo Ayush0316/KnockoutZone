@@ -1,13 +1,16 @@
-import { useState } from 'react'
-import { BrowserRouter } from 'react-router-dom'
-import AllRoutes from './routes'
-// import './App.css'
+import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+import Store from "./store/store";
+import AllRoutes from "./routes";
+import "./index.css";
 
 function App() {
   return (
-    <BrowserRouter>
-      <AllRoutes />
-    </BrowserRouter>
+    <Provider store={Store}>
+      <BrowserRouter>
+        <AllRoutes />
+      </BrowserRouter>
+    </Provider>
   )
 }
 

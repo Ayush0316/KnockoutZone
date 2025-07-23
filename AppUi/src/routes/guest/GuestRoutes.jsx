@@ -8,6 +8,7 @@ import { GUEST_PATH } from "./GuestPaths";
 const GuestRoutes = () => {
     return (
         <>
+            <Route path="/" element={<LandingPage />} />
             <Route path={GUEST_PATH.DASHBOARD} element={
                 <GuestDashboard />
             }

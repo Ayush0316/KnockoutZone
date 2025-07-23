@@ -1,17 +1,25 @@
-import { Navigate, useNavigate } from "react-router-dom";
-import { GUEST_PATH } from "../routes/guest/GuestPaths";
+import Navigation from "../components/landing/Navigation";
+import Hero from "../components/landing/Hero";
+import Features from "../components/landing/Features";
+import About from "../components/landing/About";
+import Footer from "../components/landing/Footer";
 
 const LandingPage = () => {
-    const navigate = useNavigate();
-    const btnHandle = () => {
-        navigate(GUEST_PATH.LOGIN);
-    }
-    return <>
-        <div>
-            Landing page
+    return (
+        <div className="min-h-screen">
+            <Navigation />
+            <main>
+                <Hero />
+                <div id="features">
+                    <Features />
+                </div>
+                <div id="about">
+                    <About />
+                </div>
+            </main>
+            <Footer />
         </div>
-            <button onClick={btnHandle}>login</button>
-    </>
-}
+    );
+};
 
 export default LandingPage;

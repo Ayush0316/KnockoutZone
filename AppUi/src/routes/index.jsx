@@ -1,15 +1,20 @@
 import { Route, Routes } from "react-router-dom"
-import AdminRoutes from "./admin/AdminRoutes"
-import PlayerRoutes from "./player/PlayerRoutes"
-import GuestRoutes from "./guest/GuestRoutes"
 import LandingPage from "../pages/landing"
+import LoginPage from "../pages/auth/Login"
+import AdminDashboard from "../pages/admin/dashboard"
+import PlayerDashboard from "../pages/player/dashboard"
+import GuestDashboard from "../pages/guest/dashboard"
+import UnauthorizedPage from "../pages/unauthorized"
 
 const AllRoutes = () => {
     return (
         <Routes>
-            {AdminRoutes()}
-            {PlayerRoutes()}
-            {GuestRoutes()}
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/admin/*" element={<AdminDashboard />} />
+            <Route path="/player/*" element={<PlayerDashboard />} />
+            <Route path="/dashboard" element={<GuestDashboard />} />
+            <Route path="/unauthorized" element={<UnauthorizedPage />} />
         </Routes>
     )
 }
