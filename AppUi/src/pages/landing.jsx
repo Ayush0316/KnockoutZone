@@ -1,3 +1,4 @@
+
 import Navigation from "../components/landing/Navigation";
 import Hero from "../components/landing/Hero";
 import Features from "../components/landing/Features";
@@ -16,3 +17,13 @@ const LandingPage = () => {
     );
 };
 export default LandingPage;
+import React from "react";
+import Button from "../components/common/Buttons/ButtonComponent";
+
+export default function Landing() {
+  return <div>
+    Landing Page.
+    <Button variant='secondary'>Login</Button>
+    </div>;
+}
+
