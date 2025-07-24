@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { FaLock } from "react-icons/fa"; // Make sure react-icons is installed
+import { FaLock } from "react-icons/fa";
+import Button from "../components/common/Buttons/ButtonComponent";
 
 const UnauthorizedPage = () => {
   const navigate = useNavigate();
@@ -12,18 +13,8 @@ const UnauthorizedPage = () => {
       <p className="text-gray-600 mb-6">You don’t have permission to view this page.</p>
 
       <div className="flex gap-4">
-        <button
-          onClick={() => navigate("/")}
-          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
-        >
-          Go to Home
-        </button>
-        <button
-          onClick={() => navigate("/login")}
-          className="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition"
-        >
-          Login
-        </button>
+        <Button onClick={() => navigate("/")}>Go to Home</Button>
+        <Button onClick={() => navigate("/login")} variant="secondary">Login</Button>
       </div>
     </div>
   );
