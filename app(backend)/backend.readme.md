@@ -21,7 +21,7 @@ psql --version
 
 ```sh
 git clone <your-repo-url>
-cd app(backend)
+cd KnockoutZone/app(backend)
 ```
 
 ---
