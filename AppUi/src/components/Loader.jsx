@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from "../utils/utils";
 import { forwardRef } from "react";
 
 const sizeClasses = {
@@ -9,25 +9,7 @@ const sizeClasses = {
 };
 
 const LoaderSpinner = forwardRef(
-  ({ size = "md", variant = "default", fullScreen = false, className }, ref) => {
-    const baseClasses = cn(
-      "relative flex items-center justify-center",
-      sizeClasses[size],
-      className
-    );
-
-    if (variant === "pulse") {
-      return (
-        <div 
-          ref={ref}
-          className={cn(
-            baseClasses,
-            fullScreen && "fixed inset-0 z-50 bg-background/80 backdrop-blur-sm"
-          )}
-        >
-        </div>
-      );
-    }
+  ({ size = "md", variant = "default", fullScreen = false }, ref) => {
 
     if (variant === "dots") {
       return (
@@ -35,7 +17,7 @@ const LoaderSpinner = forwardRef(
           ref={ref}
           className={cn(
             "flex items-center justify-center gap-1",
-            fullScreen && "fixed inset-0 z-50 bg-background/80 backdrop-blur-sm flex-col"
+            fullScreen && "fixed inset-0 z-50 bg-background/80 backdrop-blur-[2px] flex-col"
           )}
         >
           <div className="flex items-center gap-1">
@@ -62,7 +44,7 @@ const LoaderSpinner = forwardRef(
       <div 
         ref={ref}
         className={cn(
-          fullScreen && "fixed inset-0 z-50 bg-background/80 backdrop-blur-sm flex items-center justify-center"
+          fullScreen && "fixed inset-0 z-50 bg-background/80 backdrop-blur-[2px] flex items-center justify-center"
         )}
       >
         <div className="flex flex-col items-center gap-4">
@@ -79,7 +61,7 @@ const LoaderSpinner = forwardRef(
             {/* Glassmorphism circle */}
             <div 
               className={cn(
-                "absolute inset-0 rounded-full backdrop-blur-[10px] border border-white/10 animate-loader-slide-delayed z-10",
+                "absolute inset-0 rounded-full backdrop-blur-[24px] border border-white/10 animate-loader-slide-delayed z-10",
                 sizeClasses[size]
               )}
               style={{
