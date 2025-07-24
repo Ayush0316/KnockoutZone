@@ -1,0 +1,61 @@
+/* Register.css */
+
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #3a8de4, #9462f2);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.glass-card {
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px 30px;
+  width: 350px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: white;
+  text-align: center;
+}
+
+.title {
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+
+.input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 12px 0;
+  border-radius: 12px;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 16px;
+  outline: none;
+}
+
+.input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.register-button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 18px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(to right, #3a8de4, #9462f2);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.register-button:hover {
+  opacity: 0.85;
+}

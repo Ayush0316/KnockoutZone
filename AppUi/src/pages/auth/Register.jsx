@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Button from "../../components/common/Buttons/ButtonComponent";
 
 const roles = ["Player", "Organizer", "Admin"];
 
@@ -43,7 +44,6 @@ const Register = () => {
     }
 
     setLoading(true);
-    // simulate backend call
     setTimeout(() => {
       setLoading(false);
       navigate("/login");
@@ -51,15 +51,18 @@ const Register = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600 p-4">
-      <div className="backdrop-blur-md bg-white/10 p-8 rounded-3xl w-full max-w-md shadow-xl border border-white/20">
-        <h2 className="text-white text-3xl font-bold mb-6 text-center">Register</h2>
+    <div className="min-h-screen flex items-center justify-center px-4 bg-gradient-to-br from-[#1E3C72] via-[#2A5298] to-[#6DD5FA]">
+      <div className="w-full max-w-md p-8 rounded-xl bg-white/10 backdrop-blur-md border border-white/30 shadow-lg">
+        <h2 className="text-3xl font-semibold text-white text-center mb-6">
+          Create Account
+        </h2>
+
         <form onSubmit={handleSubmit} className="space-y-4">
           <input
             type="text"
             name="fullName"
             placeholder="Full Name"
-            className="w-full p-3 rounded-xl bg-white/20 placeholder-white text-white focus:outline-none focus:ring-2 focus:ring-purple-300 transition"
+            className="w-full px-4 py-3 rounded-lg bg-white/20 text-white placeholder-white/70 border border-white/30 focus:outline-none focus:ring-2 focus:ring-white/60"
             onChange={handleChange}
             value={formData.fullName}
           />
@@ -67,41 +70,46 @@ const Register = () => {
             type="email"
             name="email"
             placeholder="Email"
-            className="w-full p-3 rounded-xl bg-white/20 placeholder-white text-white focus:outline-none focus:ring-2 focus:ring-purple-300 transition"
+            className="w-full px-4 py-3 rounded-lg bg-white/20 text-white placeholder-white/70 border border-white/30 focus:outline-none focus:ring-2 focus:ring-white/60"
             onChange={handleChange}
             value={formData.email}
           />
+
           <div className="relative">
             <input
               type={showPassword ? "text" : "password"}
               name="password"
               placeholder="Password"
-              className="w-full p-3 rounded-xl bg-white/20 placeholder-white text-white focus:outline-none focus:ring-2 focus:ring-purple-300 transition"
+              className="w-full px-4 py-3 rounded-lg bg-white/20 text-white placeholder-white/70 border border-white/30 focus:outline-none focus:ring-2 focus:ring-white/60"
               onChange={handleChange}
               value={formData.password}
             />
             <span
-              className="absolute right-4 top-3 text-white cursor-pointer"
+              className="absolute right-4 top-3 text-white/60 cursor-pointer"
               onClick={() => setShowPassword(!showPassword)}
             >
               {showPassword ? "🙈" : "👁️"}
             </span>
           </div>
+
           <input
             type="password"
             name="confirmPassword"
             placeholder="Confirm Password"
-            className="w-full p-3 rounded-xl bg-white/20 placeholder-white text-white focus:outline-none focus:ring-2 focus:ring-purple-300 transition"
+            className="w-full px-4 py-3 rounded-lg bg-white/20 text-white placeholder-white/70 border border-white/30 focus:outline-none focus:ring-2 focus:ring-white/60"
             onChange={handleChange}
             value={formData.confirmPassword}
           />
+
           <select
             name="role"
-            className="w-full p-3 rounded-xl bg-white/20 text-white focus:outline-none focus:ring-2 focus:ring-purple-300 transition"
+            className="w-full px-4 py-3 rounded-lg bg-white/20 text-white border border-white/30 focus:outline-none focus:ring-2 focus:ring-white/60"
             onChange={handleChange}
             value={formData.role}
           >
-            <option value="">Select Role</option>
+            <option value="" className="text-white/70">
+              Select Role
+            </option>
             {roles.map((role) => (
               <option key={role} value={role} className="text-black">
                 {role}
@@ -111,19 +119,19 @@ const Register = () => {
 
           {error && <p className="text-red-300 text-sm">{error}</p>}
 
-          <button
+          <Button
             type="submit"
-            disabled={loading}
-            className="w-full p-3 rounded-xl bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold hover:opacity-90 transition"
+            isLoading={loading}
+            className="w-full bg-gradient-to-r from-[#6DD5FA] to-[#2980B9] text-white py-3 rounded-lg hover:opacity-90 transition-all duration-300"
           >
-            {loading ? "Creating Account..." : "Register"}
-          </button>
+            Register
+          </Button>
 
-          <p className="text-sm text-white text-center mt-4">
+          <p className="text-sm text-white/70 text-center mt-4">
             Already have an account?{" "}
             <span
               onClick={() => navigate("/login")}
-              className="underline cursor-pointer text-blue-200"
+              className="underline cursor-pointer text-white"
             >
               Login
             </span>
