@@ -1,12 +1,12 @@
-
-
+/** @type {import('tailwindcss').Config} */
 export default {
 	darkMode: ["class"],
 	content: [
+		"./index.html",
+		"./src/**/*.{js,ts,jsx,tsx}",
 		"./pages/**/*.{ts,tsx}",
 		"./components/**/*.{ts,tsx}",
 		"./app/**/*.{ts,tsx}",
-		"./src/**/*.{ts,tsx}",
 	],
 	prefix: "",
 	theme: {
@@ -51,6 +51,12 @@ export default {
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
+				},
+				// Gaming specific colors
+				game: {
+					success: 'hsl(var(--game-success))',
+					warning: 'hsl(var(--game-warning))',
+					disabled: 'hsl(var(--game-disabled))'
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
@@ -117,6 +123,14 @@ export default {
 						opacity: '0',
 						transform: 'scale(0.95)'
 					}
+				},
+				'pulse-glow': {
+					'0%, 100%': {
+						boxShadow: '0 0 20px hsl(var(--primary) / 0.5)'
+					},
+					'50%': {
+						boxShadow: '0 0 30px hsl(var(--primary) / 0.8)'
+					}
 				}
 			},
 			animation: {
@@ -125,9 +139,26 @@ export default {
 				'loader-slide': 'loader-slide 2s ease-in-out infinite',
 				'loader-slide-delayed': 'loader-slide 2s ease-in-out infinite -1s',
 				'fade-in': 'fade-in 0.3s ease-out',
-				'fade-out': 'fade-out 0.3s ease-out'
+				'fade-out': 'fade-out 0.3s ease-out',
+				'pulse-glow': 'pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+				'spin-slow': 'spin 3s linear infinite'
+			},
+			backgroundImage: {
+				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-secondary': 'var(--gradient-secondary)',
+				'gradient-danger': 'var(--gradient-danger)',
+				'gradient-success': 'var(--gradient-success)'
+			},
+			boxShadow: {
+				'glow-primary': 'var(--glow-primary)',
+				'glow-secondary': 'var(--glow-secondary)',
+				'glow-danger': 'var(--glow-danger)'
+			},
+			transitionTimingFunction: {
+				'smooth': 'var(--transition-smooth)',
+				'bounce': 'var(--transition-bounce)'
 			}
 		}
 	},
-	plugins: [import("tailwindcss-animate")],
+	plugins: [require("tailwindcss-animate")],
 };
