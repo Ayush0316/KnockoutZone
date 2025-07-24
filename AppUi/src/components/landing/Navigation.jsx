@@ -27,15 +27,18 @@ const Navigation = () => {
 
                     {/* Desktop Navigation */}
                     <div className="hidden md:block">
-                        <div className="ml-10 flex items-baseline space-x-4">
-                            <a href="#features" className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
-                                Features
+                        <div className="ml-10 flex items-baseline space-x-2">
+                            <a href="#features" className="relative text-gray-700 hover:text-blue-600 px-4 py-2 rounded-xl text-base font-bold transition-all duration-300 hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg group">
+                                <span className="relative z-10">Features</span>
+                                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             </a>
-                            <a href="#about" className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
-                                How it Works
+                            <a href="#about" className="relative text-gray-700 hover:text-blue-600 px-4 py-2 rounded-xl text-base font-bold transition-all duration-300 hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg group">
+                                <span className="relative z-10">How it Works</span>
+                                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             </a>
-                            <a href="#contact" className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">
-                                Contact
+                            <a href="#contact" className="relative text-gray-700 hover:text-blue-600 px-4 py-2 rounded-xl text-base font-bold transition-all duration-300 hover:bg-white/20 hover:backdrop-blur-lg hover:shadow-lg group">
+                                <span className="relative z-10">Contact</span>
+                                <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/10 to-blue-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             </a>
                         </div>
                     </div>
