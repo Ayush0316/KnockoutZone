@@ -1,17 +1,9 @@
-import { Navigate, useNavigate } from "react-router-dom";
-import { GUEST_PATH } from "../routes/guest/GuestPaths";
+import React from "react";
+import Button from "../components/common/Buttons/ButtonComponent";
 
-const LandingPage = () => {
-    const navigate = useNavigate();
-    const btnHandle = () => {
-        navigate(GUEST_PATH.LOGIN);
-    }
-    return <>
-        <div>
-            Landing page
-        </div>
-            <button onClick={btnHandle}>login</button>
-    </>
+export default function Landing() {
+  return <div>
+    Landing Page.
+    <Button variant='secondary'>Login</Button>
+    </div>;
 }
-
-export default LandingPage;

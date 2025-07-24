@@ -52,7 +52,7 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				// Gaming specific colors
+				// Gaming specific colors (from 'main' branch)
 				game: {
 					success: 'hsl(var(--game-success))',
 					warning: 'hsl(var(--game-warning))',
