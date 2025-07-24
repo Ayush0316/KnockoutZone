@@ -42,11 +42,7 @@ const Hero = () => {
 
                     {/* Main heading */}
                     <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent mb-6 leading-tight">
-                        Tournament
-                        <br />
-                        <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 bg-clip-text text-transparent">
-                            Management
-                        </span>
+                        Tournament <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 bg-clip-text text-transparent">Management</span>
                         <br />
                         Made Simple
                     </h1>
