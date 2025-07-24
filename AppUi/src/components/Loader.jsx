@@ -9,7 +9,7 @@ const sizeClasses = {
 };
 
 const LoaderSpinner = forwardRef(
-  ({ size = "md", variant = "default", fullScreen = false, text, className }, ref) => {
+  ({ size = "md", variant = "default", fullScreen = false, className }, ref) => {
     const baseClasses = cn(
       "relative flex items-center justify-center",
       sizeClasses[size],
@@ -25,14 +25,6 @@ const LoaderSpinner = forwardRef(
             fullScreen && "fixed inset-0 z-50 bg-background/80 backdrop-blur-sm"
           )}
         >
-          <div className="flex flex-col items-center gap-3">
-            <div className={cn("rounded-full bg-loader-primary animate-pulse", sizeClasses[size])} />
-            {text && (
-              <span className="text-sm font-medium text-muted-foreground animate-pulse">
-                {text}
-              </span>
-            )}
-          </div>
         </div>
       );
     }
@@ -61,11 +53,6 @@ const LoaderSpinner = forwardRef(
               />
             ))}
           </div>
-          {text && fullScreen && (
-            <span className="text-sm font-medium text-muted-foreground mt-4">
-              {text}
-            </span>
-          )}
         </div>
       );
     }
@@ -101,14 +88,6 @@ const LoaderSpinner = forwardRef(
             />
           </div>
           
-          {/* Loading text */}
-          {text && (
-            <div className="text-center">
-              <span className="text-sm font-medium text-muted-foreground">
-                {text}
-              </span>
-            </div>
-          )}
         </div>
       </div>
     );
