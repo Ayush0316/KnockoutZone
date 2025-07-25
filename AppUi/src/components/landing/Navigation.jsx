@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { GUEST_PATH } from '../../routes/guest/GuestPaths';
+import Button from '../Button.jsx';
 
 const Navigation = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -45,18 +46,20 @@ const Navigation = () => {
 
                     {/* Desktop CTA Buttons */}
                     <div className="hidden md:flex items-center space-x-3">
-                        <button
+                        <Button
+                            variant="outline"
+                            size="small"
                             onClick={handleLogin}
-                            className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors duration-200"
+                            className="text-gray-700 hover:text-blue-600"
                         >
                             Login
-                        </button>
-                        <button
+                        </Button>
+                        <Button
+                            size="small"
                             onClick={handleGetStarted}
-                            className="px-6 py-2 text-sm font-medium text-white bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-200 shadow-lg hover:shadow-xl"
                         >
                             Get Started
-                        </button>
+                        </Button>
                     </div>
 
                     {/* Mobile menu button */}
@@ -91,18 +94,21 @@ const Navigation = () => {
                         </a>
                         <div className="pt-4 pb-3 border-t border-white/20">
                             <div className="flex items-center px-3 space-x-3">
-                                <button
+                                <Button
+                                    variant="outline"
+                                    size="small"
                                     onClick={handleLogin}
-                                    className="flex-1 px-4 py-2 text-sm font-medium text-gray-700 border border-gray-300 rounded-lg hover:bg-white/20 transition-colors duration-200"
+                                    className="flex-1"
                                 >
                                     Login
-                                </button>
-                                <button
+                                </Button>
+                                <Button
+                                    size="small"
                                     onClick={handleGetStarted}
-                                    className="flex-1 px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-200"
+                                    className="flex-1"
                                 >
                                     Get Started
-                                </button>
+                                </Button>
                             </div>
                         </div>
                     </div>

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import Button from '../Button.jsx';
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -63,9 +64,9 @@ const Footer = () => {
                                     placeholder="Enter your email"
                                     className="flex-1 px-4 py-3 rounded-lg backdrop-blur-lg bg-white/10 border border-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                                 />
-                                <button className="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl">
+                                <Button className="text-white">
                                     Subscribe
-                                </button>
+                                </Button>
                             </div>
                         </div>
                     </div>

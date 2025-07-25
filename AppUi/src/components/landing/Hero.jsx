@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { GUEST_PATH } from '../../routes/guest/GuestPaths';
+import Button from '../Button.jsx';
 
 const Hero = () => {
     const navigate = useNavigate();
@@ -55,18 +56,19 @@ const Hero = () => {
 
                     {/* CTA buttons */}
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-                        <button
+                        <Button
                             onClick={handleGetStarted}
-                            className="px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                            size="large"
                         >
                             Get Started Free
-                        </button>
-                        <button
+                        </Button>
+                        <Button
                             onClick={handleLearnMore}
-                            className="px-8 py-4 text-lg font-semibold text-gray-700 bg-white/20 backdrop-blur-lg border border-white/30 rounded-xl hover:bg-white/30 transition-all duration-300 shadow-lg hover:shadow-xl"
+                            variant="secondary"
+                            size="large"
                         >
                             Learn More
-                        </button>
+                        </Button>
                     </div>
 
                     {/* Stats */}

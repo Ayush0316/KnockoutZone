@@ -1,3 +1,5 @@
+import Button from '../Button.jsx';
+
 const Features = () => {
     const features = [
         {
@@ -102,9 +104,9 @@ const Features = () => {
                         <p className="text-gray-600 mb-6">
                             Join thousands of organizers who trust KnockoutZone for their tournament management needs.
                         </p>
-                        <button className="px-8 py-3 text-lg font-semibold text-white bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                        <Button className="text-lg">
                             Start Your Free Trial
-                        </button>
+                        </Button>
                     </div>
                 </div>
             </div>
