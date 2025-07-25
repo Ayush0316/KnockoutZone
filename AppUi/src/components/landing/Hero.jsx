@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { GUEST_PATH } from '../../routes/guest/GuestPaths';
-import Button from '../Button.jsx';
+import Button from '../common/Buttons/ButtonComponent.jsx';
 
 const Hero = () => {
     const navigate = useNavigate();
@@ -58,14 +58,15 @@ const Hero = () => {
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
                         <Button
                             onClick={handleGetStarted}
-                            size="large"
+                            variant="primary"
+                            size="lg"
                         >
                             Get Started Free
                         </Button>
                         <Button
                             onClick={handleLearnMore}
                             variant="secondary"
-                            size="large"
+                            size="lg"
                         >
                             Learn More
                         </Button>

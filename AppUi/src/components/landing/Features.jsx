@@ -1,4 +1,4 @@
-import Button from '../Button.jsx';
+import Button from '../common/Buttons/ButtonComponent.jsx';
 
 const Features = () => {
     const features = [
@@ -104,7 +104,11 @@ const Features = () => {
                         <p className="text-gray-600 mb-6">
                             Join thousands of organizers who trust KnockoutZone for their tournament management needs.
                         </p>
-                        <Button className="text-lg">
+                        <Button 
+                            variant="primary" 
+                            size="lg"
+                            className="text-lg"
+                        >
                             Start Your Free Trial
                         </Button>
                     </div>

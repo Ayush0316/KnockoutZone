@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { GUEST_PATH } from '../../routes/guest/GuestPaths';
-import Button from '../Button.jsx';
+import Button from '../common/Buttons/ButtonComponent.jsx';
 
 const Navigation = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -48,14 +48,15 @@ const Navigation = () => {
                     <div className="hidden md:flex items-center space-x-3">
                         <Button
                             variant="outline"
-                            size="small"
+                            size="sm"
                             onClick={handleLogin}
                             className="text-gray-700 hover:text-blue-600"
                         >
                             Login
                         </Button>
                         <Button
-                            size="small"
+                            variant="primary"
+                            size="sm"
                             onClick={handleGetStarted}
                         >
                             Get Started
@@ -96,14 +97,15 @@ const Navigation = () => {
                             <div className="flex items-center px-3 space-x-3">
                                 <Button
                                     variant="outline"
-                                    size="small"
+                                    size="sm"
                                     onClick={handleLogin}
                                     className="flex-1"
                                 >
                                     Login
                                 </Button>
                                 <Button
-                                    size="small"
+                                    variant="primary"
+                                    size="sm"
                                     onClick={handleGetStarted}
                                     className="flex-1"
                                 >
