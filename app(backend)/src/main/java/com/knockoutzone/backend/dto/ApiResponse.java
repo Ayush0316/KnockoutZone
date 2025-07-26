@@ -1,14 +1,13 @@
 package com.knockoutzone.backend.dto;
 
-import lombok.Getter;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class ApiResponse<T> {
-
     private boolean success = true;
     private int statusCode = 200;
     private String message = null;
