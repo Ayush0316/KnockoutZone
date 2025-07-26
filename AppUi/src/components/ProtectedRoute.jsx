@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+
 import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
 import { GUEST_PATH } from "../routes/guest/GuestPaths";
