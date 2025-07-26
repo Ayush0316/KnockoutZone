@@ -6,6 +6,17 @@ A modern, full-stack web application to manage tournaments end-to-end — from c
 
 ---
 
+## 📚 Table of Contents
+- [✨ Features](#-features)
+- [🧰 Tech Stack](#-tech-stack)
+- [🚧 Roadmap](#-roadmap)
+- [🤝 How to Contribute](#-how-to-contribute-gssoc25-participants--others)
+- [📄 License](#-license)
+- [🙋‍♂️ Connect with me](#-connect-with-me)
+- [⭐ Star the Repo](#-star-the-repo)
+
+---
+
 ## ✨ Features
 
 ### 👨‍💼 Admin
@@ -32,6 +43,8 @@ A modern, full-stack web application to manage tournaments end-to-end — from c
 - Leaderboards (coming soon)
 - Stats and player performance (coming soon)
 
+🔝 [Back to top](#-table-of-contents)
+
 ---
 
 ## 🧰 Tech Stack
@@ -45,15 +58,9 @@ A modern, full-stack web application to manage tournaments end-to-end — from c
 | Realtime  | Socket.IO / REST polling       |
 | Deployment| Vercel (Frontend), Render/Railway (Backend) |
 
-<!-- ---
-
-## 🧪 Screenshots
-
-![Landing Page](./screenshots/landing.png)
-![Dashboard](./screenshots/dashboard.png) -->
+🔝 [Back to top](#-table-of-contents)
 
 ---
-
 
 ## 🚧 Roadmap
 
@@ -68,8 +75,9 @@ A modern, full-stack web application to manage tournaments end-to-end — from c
 - [ ] Live Streaming Support
 - [ ] Public API Access
 
----
+🔝 [Back to top](#-table-of-contents)
 
+---
 
 ## 🤝 How to Contribute (GSSoC'25 Participants & Others!)
 
@@ -79,9 +87,15 @@ We welcome contributions from everyone! If you're participating in **GSSoC'25** 
 * **Join our Community:** If you have questions, need help, or want to discuss ideas, join our Discord channel:
     ➡️ **[Join our Discord Server!](https://discord.gg/txrsgvV5)**
 
+🔝 [Back to top](#-table-of-contents)
+
+---
+
 ## 📄 License
 
 This project is open-sourced under the [MIT License](LICENSE).
+
+🔝 [Back to top](#-table-of-contents)
 
 ---
 
@@ -91,8 +105,12 @@ This project is open-sourced under the [MIT License](LICENSE).
 📧 ayushkansal42@gmail.com  
 🔗 [LinkedIn](https://www.linkedin.com/in/ayushkansal0316)
 
+🔝 [Back to top](#-table-of-contents)
+
 ---
 
 ## ⭐ Star the Repo
 
 If you like the project, don’t forget to ⭐ the repository to help others discover it too!
+
+🔝 [Back to top](#-table-of-contents)

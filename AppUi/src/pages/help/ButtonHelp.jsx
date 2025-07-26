@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../components/common/Buttons/ButtonComponent';
+import Button from '../../components/common/Buttons/ButtonComponent';
 import { Play, Download, Settings, Trash2 } from "lucide-react";
 
 const ButtonHelp = () => {
@@ -216,7 +216,7 @@ const ButtonHelp = () => {
           <div className="mt-8 p-4 bg-muted rounded-lg">
             <p className="text-sm text-muted-foreground">
               <strong>Note:</strong> This is a development help page for testing the Button component. 
-              The component is located at <code>/src/utils/ButtonComponent.jsx</code> and uses default export.
+              The component is located at <code>/src/components/common/Button/ButtonComponent.jsx</code> and uses default export.
             </p>
           </div>
         </div>
