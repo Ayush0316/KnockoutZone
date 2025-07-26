@@ -593,21 +593,4 @@
     border-radius: var(--radius);
   }
 }
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
-@layer utilities {
-  /* Customize scrollbar */
-  .scrollbar-thin {
-    scrollbar-width: thin;
-  }
-
-  .scrollbar-track-rounded {
-    scrollbar-color: #1e293b #0f172a; /* thumb # track */
-  }
-
-  .scrollbar-thumb-rounded {
-    scrollbar-color: #e0531f #ffffff; /* warm orange thumb */
-  }
-}
