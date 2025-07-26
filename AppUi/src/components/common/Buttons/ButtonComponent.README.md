@@ -18,7 +18,7 @@ The `Button` component is a highly customizable, gaming-themed button designed f
 ## Installation
 
 ```jsx
-import Button from 'src/components/common/Buttons/ButtonComponent';
+import Button from './ButtonComponent';
 ```
 
 ## Basic Usage
