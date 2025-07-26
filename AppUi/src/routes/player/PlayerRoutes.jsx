@@ -1,5 +1,5 @@
 import { Route } from "react-router-dom";
-import PlayerDashboard from "../../pages/player/dashboard";
+import PlayerDashboard from "../../pages/player/PlayerDashboard";
 import ProtectedRoutes from "../../components/ProtectedRoute";
 import { ROLES } from "../../utils/constants/roles";
 import { PLAYER_PATH } from "./PlayerPaths";
