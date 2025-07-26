@@ -15,16 +15,15 @@
         <encoder>
             <pattern>${LOG_PATTERN}</pattern>
         </encoder>
-        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-
-            <fileNamePattern>${LOG_ARCHIVE}/application.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
-
-            <maxFileSize>10MB</maxFileSize>
-
-            <maxHistory>30</maxHistory>
-
-            <totalSizeCap>1GB</totalSizeCap>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <fileNamePattern>${LOG_ARCHIVE}/application.%i.log</fileNamePattern>
+            <minIndex>1</minIndex>
+            <maxIndex>30</maxIndex>
         </rollingPolicy>
+
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <maxFileSize>10MB</maxFileSize>
+        </triggeringPolicy>
     </appender>
 
     <!-- Root Logger Configuration -->
