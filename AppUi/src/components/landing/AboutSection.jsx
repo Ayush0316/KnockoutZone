@@ -48,13 +48,13 @@ const AboutSection = () => {
             <span className="text-sm font-medium text-muted-foreground">About KnockOutZone</span>
           </div>
           
-          <h2 className="text-4xl md:text-6xl font-black mb-6 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-6xl font-black mb-6 bg-gradient-to-r from-white via-blue-200 to-purple-300 bg-clip-text text-transparent drop-shadow-lg">
             Revolutionizing 
             <br />
             Tournament Gaming
           </h2>
           
-          <p className="text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
             KnockOutZone is more than just a tournament platform – it's the future of competitive gaming. 
             We've reimagined how tournaments should work, combining cutting-edge technology with 
             passionate community-driven design.
@@ -84,7 +84,7 @@ const AboutSection = () => {
         {/* Story Section */}
         <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
           <div>
-            <h3 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
+            <h3 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent drop-shadow-lg">
               Born from Passion, Built for Champions
             </h3>
             <div className="space-y-4 text-foreground/80 leading-relaxed">
@@ -123,7 +123,7 @@ const AboutSection = () => {
 
         {/* Values Section */}
         <div className="text-center mb-12">
-          <h3 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
+          <h3 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent drop-shadow-lg">
             Our Core Values
           </h3>
           <p className="text-lg text-foreground/80 max-w-2xl mx-auto">

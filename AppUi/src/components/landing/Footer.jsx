@@ -72,7 +72,7 @@ const Footer = () => {
                                 />
                                 <Button 
                                     variant="primary"
-                                    className="hover:scale-105 hover:shadow-glow-primary transition-all duration-300"
+                                    className="hover:scale-105 hover:shadow-glow-primary"
                                 >
                                     Subscribe
                                 </Button>
@@ -98,10 +98,9 @@ const Footer = () => {
                                 {socialLinks.map((social) => (
                                     <Button
                                         key={social.name}
-                                        variant="ghost"
-                                        size="sm"
+                                        variant="glass-social"
+                                        size="social-icon"
                                         onClick={() => window.open(social.href, '_blank')}
-                                        className="w-10 h-10 backdrop-blur-lg bg-white/5 border border-white/10 rounded-lg flex items-center justify-center text-lg hover:bg-white/10 hover:border-white/20 hover:scale-110 transition-all duration-300 p-0"
                                         aria-label={social.name}
                                     >
                                         {social.icon}
@@ -118,7 +117,7 @@ const Footer = () => {
                                     <li key={link.name}>
                                         <Button
                                             variant="ghost"
-                                            size="sm"
+                                            size="footer-link"
                                             onClick={() => {
                                                 if (link.href.startsWith('#')) {
                                                     document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' });
@@ -126,7 +125,7 @@ const Footer = () => {
                                                     window.open(link.href, '_blank');
                                                 }
                                             }}
-                                            className="text-muted-foreground hover:text-primary transition-colors duration-200 p-0 h-auto font-normal justify-start"
+                                            className="text-muted-foreground hover:text-primary transition-colors duration-200"
                                         >
                                             {link.name}
                                         </Button>
@@ -143,7 +142,7 @@ const Footer = () => {
                                     <li key={link.name}>
                                         <Button
                                             variant="ghost"
-                                            size="sm"
+                                            size="footer-link"
                                             onClick={() => {
                                                 if (link.href.startsWith('#')) {
                                                     document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' });
@@ -151,7 +150,7 @@ const Footer = () => {
                                                     window.open(link.href, '_blank');
                                                 }
                                             }}
-                                            className="text-muted-foreground hover:text-primary transition-colors duration-200 p-0 h-auto font-normal justify-start"
+                                            className="text-muted-foreground hover:text-primary transition-colors duration-200"
                                         >
                                             {link.name}
                                         </Button>
@@ -168,7 +167,7 @@ const Footer = () => {
                                     <li key={link.name}>
                                         <Button
                                             variant="ghost"
-                                            size="sm"
+                                            size="footer-link"
                                             onClick={() => {
                                                 if (link.href.startsWith('#')) {
                                                     document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' });
@@ -176,7 +175,7 @@ const Footer = () => {
                                                     window.open(link.href, '_blank');
                                                 }
                                             }}
-                                            className="text-muted-foreground hover:text-primary transition-colors duration-200 p-0 h-auto font-normal justify-start"
+                                            className="text-muted-foreground hover:text-primary transition-colors duration-200"
                                         >
                                             {link.name}
                                         </Button>
@@ -193,7 +192,7 @@ const Footer = () => {
                                     <li key={link.name}>
                                         <Button
                                             variant="ghost"
-                                            size="sm"
+                                            size="footer-link"
                                             onClick={() => {
                                                 if (link.href.startsWith('#')) {
                                                     document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' });
@@ -201,7 +200,7 @@ const Footer = () => {
                                                     window.open(link.href, '_blank');
                                                 }
                                             }}
-                                            className="text-muted-foreground hover:text-primary transition-colors duration-200 p-0 h-auto font-normal justify-start"
+                                            className="text-muted-foreground hover:text-primary transition-colors duration-200"
                                         >
                                             {link.name}
                                         </Button>

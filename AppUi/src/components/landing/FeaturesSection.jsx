@@ -4,6 +4,7 @@ import { GUEST_PATH } from '../../routes/guest/GuestPaths';
 import { UI_TEXT } from '../../utils/constants/landingConstants';
 import { SECTION_IDS } from '../../utils/constants/landingSections';
 import Button from '../common/Buttons/ButtonComponent';
+import GlassCard from '../common/Cards/GlassCard';
 
 const FeaturesSection = () => {
     const navigate = useNavigate();
@@ -68,15 +69,15 @@ const FeaturesSection = () => {
             <div className="relative z-10 max-w-7xl mx-auto">
                 {/* Section header */}
                 <div className="text-center mb-16">
-                    <div className="inline-block px-4 py-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-full mb-6">
+                    <GlassCard variant="badge" className="mb-6">
                         <span className="text-accent font-semibold text-sm uppercase tracking-wider">Powerful Features</span>
-                    </div>
+                    </GlassCard>
                     
-                    <h2 className="text-4xl sm:text-5xl md:text-6xl font-black mb-6 bg-gradient-to-r from-foreground via-accent to-primary bg-clip-text text-transparent">
+                    <h2 className="text-4xl sm:text-5xl md:text-6xl font-black mb-6 bg-gradient-to-r from-white via-blue-200 to-purple-300 bg-clip-text text-transparent drop-shadow-lg">
                         Powerful Features
                     </h2>
                     
-                    <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                    <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
                         Everything you need to create, manage, and run successful tournaments. Built for organizers, loved by players.
                     </p>
                     

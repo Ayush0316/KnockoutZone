@@ -104,11 +104,11 @@ const ContactSection = () => {
             <span className="text-primary font-semibold text-sm uppercase tracking-wider">Get In Touch</span>
           </div>
           
-          <h2 className="text-4xl md:text-6xl font-black mb-6 bg-gradient-to-r from-foreground via-primary to-secondary bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-6xl font-black mb-6 bg-gradient-to-r from-white via-blue-200 to-purple-300 bg-clip-text text-transparent drop-shadow-lg">
             Contact Our Team
           </h2>
           
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
             Have questions about KnockOutZone? Need help setting up your tournament? 
             Our expert team is here to help you succeed.
           </p>
@@ -308,9 +308,8 @@ const ContactSection = () => {
               Find quick answers to common questions about KnockOutZone
             </p>
             <Button 
-              variant="outline" 
+              variant="glass-accent"
               size="sm"
-              className="bg-white/5 backdrop-blur-md border-accent/30 text-accent hover:bg-accent/10 hover:border-accent/60"
             >
               View FAQ
             </Button>

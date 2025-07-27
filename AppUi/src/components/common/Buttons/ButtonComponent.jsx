@@ -27,12 +27,32 @@ const buttonVariants = cva(
           "bg-game-disabled text-muted-foreground cursor-not-allowed opacity-60",
         link: 
           "text-primary underline-offset-4 hover:underline hover:text-primary/80",
+        // New glassmorphism variants
+        glass:
+          "backdrop-blur-md bg-white/5 border border-white/10 text-foreground hover:bg-white/10 hover:border-white/20 hover:scale-105 active:scale-95",
+        "glass-social":
+          "backdrop-blur-lg bg-white/5 border border-white/10 text-lg hover:bg-white/10 hover:border-white/20 hover:scale-110 active:scale-95 rounded-lg",
+        "glass-nav":
+          "text-foreground/80 hover:text-primary rounded-xl hover:bg-white/10 hover:backdrop-blur-lg hover:shadow-lg",
+        "glass-outline":
+          "bg-white/5 backdrop-blur-md border-2 border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/60 hover:scale-105 active:scale-95",
+        "glass-accent":
+          "bg-white/5 backdrop-blur-md border-accent/30 text-accent hover:bg-accent/10 hover:border-accent/60 hover:scale-105 active:scale-95",
+        "glass-card":
+          "backdrop-blur-lg bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 hover:shadow-xl hover:-translate-y-2",
+        "glass-badge":
+          "inline-flex items-center px-4 py-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-full text-sm font-medium",
+        "glass-stat":
+          "backdrop-blur-lg bg-white/5 border border-white/10 rounded-2xl p-6 min-w-[120px] hover:bg-white/10 hover:border-white/20 transition-all duration-300",
       },
       size: {
         default: "h-12 px-6 py-3 text-sm",
         sm: "h-9 rounded-md px-4 text-xs",
         lg: "h-14 rounded-xl px-8 text-base",
         icon: "h-12 w-12",
+        "social-icon": "w-10 h-10 p-0",
+        "nav": "px-4 py-2 text-base font-bold h-auto",
+        "footer-link": "p-0 h-auto font-normal justify-start text-left",
       },
     },
     defaultVariants: {
@@ -103,9 +123,17 @@ Button.propTypes = {
     "outline",
     "ghost",
     "disabled",
-    "link"
+    "link",
+    "glass",
+    "glass-social",
+    "glass-nav",
+    "glass-outline",
+    "glass-accent",
+    "glass-card",
+    "glass-badge",
+    "glass-stat"
   ]),
-  size: PropTypes.oneOf(["default", "sm", "lg", "icon"]),
+  size: PropTypes.oneOf(["default", "sm", "lg", "icon", "social-icon", "nav", "footer-link"]),
   asChild: PropTypes.bool,
   isLoading: PropTypes.bool,
   disabled: PropTypes.bool,

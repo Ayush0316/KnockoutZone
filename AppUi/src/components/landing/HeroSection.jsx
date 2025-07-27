@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { GUEST_PATH } from '../../routes/guest/GuestPaths';
 import { LANDING_SECTIONS, SECTION_IDS, UI_TEXT } from '../../utils/constants/landingSections';
 import Button from '../common/Buttons/ButtonComponent.jsx';
+import GlassCard from '../common/Cards/GlassCard.jsx';
 
 const HeroSection = () => {
     const navigate = useNavigate();
@@ -42,10 +43,10 @@ const HeroSection = () => {
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
                 <div className="text-center">
                     {/* Badge */}
-                    <div className="inline-flex items-center px-4 py-2 rounded-full backdrop-blur-lg bg-white/5 border border-white/10 text-sm font-medium text-muted-foreground mb-8">
+                    <GlassCard variant="badge" className="mb-8 text-muted-foreground">
                         <span className="w-2 h-2 bg-game-success rounded-full mr-2 animate-pulse"></span>
                         New: Real-time Tournament Management
-                    </div>
+                    </GlassCard>
 
                     {/* Main heading */}
                     <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight relative animate-fade-in">
@@ -100,9 +101,8 @@ const HeroSection = () => {
                         </Button>
                         <Button
                             onClick={handleLearnMore}
-                            variant="outline"
+                            variant="glass-outline"
                             size="lg"
-                            className="bg-white/5 backdrop-blur-md border-white/20 hover:bg-white/10 hover:border-white/30 transition-all duration-300"
                         >
                             {UI_TEXT.BUTTON_LEARN_MORE}
                         </Button>
@@ -110,22 +110,22 @@ const HeroSection = () => {
 
                     {/* Stats */}
                     <div className="flex flex-wrap justify-center gap-8 text-center">
-                        <div className="backdrop-blur-lg bg-white/5 border border-white/10 rounded-2xl p-6 min-w-[120px] hover:bg-white/10 hover:border-white/20 transition-all duration-300">
+                        <GlassCard variant="stat">
                             <div className="text-3xl font-bold text-primary mb-2">1000+</div>
                             <div className="text-sm text-muted-foreground">Tournaments</div>
-                        </div>
-                        <div className="backdrop-blur-lg bg-white/5 border border-white/10 rounded-2xl p-6 min-w-[120px] hover:bg-white/10 hover:border-white/20 transition-all duration-300">
+                        </GlassCard>
+                        <GlassCard variant="stat">
                             <div className="text-3xl font-bold text-secondary mb-2">50K+</div>
                             <div className="text-sm text-muted-foreground">Players</div>
-                        </div>
-                        <div className="backdrop-blur-lg bg-white/5 border border-white/10 rounded-2xl p-6 min-w-[120px] hover:bg-white/10 hover:border-white/20 transition-all duration-300">
+                        </GlassCard>
+                        <GlassCard variant="stat">
                             <div className="text-3xl font-bold text-accent mb-2">99.9%</div>
                             <div className="text-sm text-muted-foreground">Uptime</div>
-                        </div>
-                        <div className="backdrop-blur-lg bg-white/5 border border-white/10 rounded-2xl p-6 min-w-[120px] hover:bg-white/10 hover:border-white/20 transition-all duration-300">
+                        </GlassCard>
+                        <GlassCard variant="stat">
                             <div className="text-3xl font-bold text-primary mb-2">24/7</div>
                             <div className="text-sm text-muted-foreground">Support</div>
-                        </div>
+                        </GlassCard>
                     </div>
                 </div>
             </div>
