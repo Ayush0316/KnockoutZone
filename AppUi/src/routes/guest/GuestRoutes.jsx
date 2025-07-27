@@ -8,6 +8,8 @@ import { GUEST_PATH } from "./GuestPaths";
 const GuestRoutes = () => {
     return (
         <>
+            <Route index element={<LandingPage />} />
+            <Route path="/" element={<LandingPage />} />
             <Route path={GUEST_PATH.DASHBOARD} element={
                 <GuestDashboard />
             }
@@ -19,10 +21,6 @@ const GuestRoutes = () => {
             <Route path={GUEST_PATH.UNAUTHORIZED} element={
                 <UnauthorizedPage />
             }
-            />
-            <Route path={GUEST_PATH.LANDING} element={
-                    <LandingPage />
-                }
             />
         </>
     )
