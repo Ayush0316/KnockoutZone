@@ -1,22 +1,5 @@
+@import "tailwindcss";
 /**
- * Gaming Theme Styles - KnockoutZone AppUI
- *
- * This file contains the complete design system for the gaming-themed application.
- * Built with Tailwind CSS v4 and custom CSS variables for a cohesive gaming experience.
- *
- * Structure:
- * 1. Tailwind CSS import
- * 2. CSS Variables (Light & Dark themes)
- * 3. Base layer styles
- * 4. Utility layer classes
- *
- * Color Format: All colors use HSL format for better manipulation and consistency
- * Theme Support: Full light/dark mode support with gaming-specific colors
- */
-
- @import "tailwindcss";
-
- /**
   * Design System CSS Variables
   *
   * All colors, gradients, effects, and design tokens are defined here.
@@ -30,566 +13,640 @@
   *
   * All colors MUST be in HSL format for optimal color manipulation.
   */
- 
- @layer base {
-   /**
-    * Light Theme Variables (Default)
-    *
-    * Primary color scheme for the gaming interface.
-    * Features light, energetic backgrounds with vibrant neon accents.
-    */
-   :root {
-     /* === CORE BACKGROUND COLORS === */
-     /* Main app background - soft off-white/light gray */
-     --background: 210 20% 98%; 
-     /* Primary text color - deep charcoal/near-black for high contrast */
-     --foreground: 240 10% 12%; 
-     /* === CARD & SURFACE COLORS === */
-     /* Card backgrounds - slightly darker than main background, but still light */
-     --card: 210 10% 95%; 
-     --card-foreground: 240 10% 12%; 
- 
-     /* Popover/dropdown backgrounds - similar to card */
-     --popover: 210 10% 95%; 
-     --popover-foreground: 240 10% 12%; 
- 
-     /* === PRIMARY GAMING COLORS === */
-     /* Electric blue - main brand color for buttons and highlights (retained) */
-     --primary: 210 100% 56%;
-     --primary-foreground: 0 0% 100%; /* White text on primary */
- 
-     /* Neon purple - secondary brand color for accents (retained) */
-     --secondary: 270 95% 65%;
-     --secondary-foreground: 0 0% 100%; 
- 
-     /* === MUTED & SUBTLE COLORS === */
-     /* Muted backgrounds for less prominent elements - a soft gray */
-     --muted: 210 15% 92%; 
-     --muted-foreground: 215 20% 40%; 
- 
-     /* Accent color - matches secondary for consistency (retained hue, adjusted lightness for contrast) */
-     --accent: 270 95% 65%; 
-     --accent-foreground: 0 0% 100%; 
- 
-     /* === SEMANTIC COLORS === */
-     /* Neon red - for destructive actions and errors (retained) */
-     --destructive: 0 100% 60%;
-     --destructive-foreground: 0 0% 100%; 
- 
-     /* === FORM & INTERACTION COLORS === */
-     /* Border color for inputs and dividers - light gray */
-     --border: 210 10% 80%; 
-     /* Input field backgrounds - slightly off-white */
-     --input: 0 0% 100%; 
-     /* Focus ring color - matches primary (retained) */
-     --ring: 210 100% 56%;
- 
-     /* === GAMING-SPECIFIC SEMANTIC COLORS === */
-     /* Bright green - for success states, achievements, wins (retained) */
-     --game-success: 120 100% 35%; /* Slightly darker for better contrast on light background */
-     /* Bright orange/yellow - for warnings, cautions, alerts (retained) */
-     --game-warning: 45 100% 50%; /* Slightly darker for better contrast on light background */
-     /* Muted blue-gray - for disabled states, unavailable options (retained) */
-     --game-disabled: 220 13% 70%; /* Lighter disabled state for light background */
- 
-     /* === GAMING GRADIENT EFFECTS === */
-     /* Primary gradient - electric blue to cyan for buttons and highlights (retained) */
-     --gradient-primary: linear-gradient(135deg, hsl(210 100% 56%), hsl(195 100% 60%));
-     /* Secondary gradient - purple to magenta for accents (retained) */
-     --gradient-secondary: linear-gradient(135deg, hsl(270 95% 65%), hsl(285 95% 70%));
-     /* Danger gradient - red to orange for destructive actions (retained) */
-     --gradient-danger: linear-gradient(135deg, hsl(0 100% 60%), hsl(15 100% 65%));
-     /* Success gradient - green to lime for positive actions (retained) */
-     --gradient-success: linear-gradient(135deg, hsl(120 100% 50%), hsl(135 100% 55%));
- 
-     /* === GAMING GLOW EFFECTS === */
-     /* Primary glow - electric blue shadow for buttons and focus states (retained) */
-     --glow-primary: 0 0 20px hsl(210 100% 56% / 0.3); /* Reduced opacity for lighter background */
-     /* Secondary glow - purple shadow for secondary elements (retained) */
-     --glow-secondary: 0 0 20px hsl(270 95% 65% / 0.3); /* Reduced opacity for lighter background */
-     /* Danger glow - red shadow for destructive actions (retained) */
-     --glow-danger: 0 0 20px hsl(0 100% 60% / 0.3); /* Reduced opacity for lighter background */
- 
-     /* === GAMING TRANSITION EFFECTS === */
-     /* Smooth transition - for general hover and state changes (retained) */
-     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-     /* Bounce transition - for gaming-style button interactions (retained) */
-     --transition-bounce: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
- 
-     /* === BORDER RADIUS === */
-     /* Standard border radius for consistent rounded corners (retained) */
-     --radius: 0.5rem;
- 
-     /* === SIDEBAR COLORS (Light Theme - adjusted for consistency) === */
-     /* Light sidebar background - slightly different from main background for distinction */
-     --sidebar-background: 210 15% 92%;   
-     /* Dark text on light sidebar */
-     --sidebar-foreground: 240 5.3% 26.1%;
-     /* Dark primary elements in light sidebar */
-     --sidebar-primary: 240 5.9% 10%;
-     /* Light text on dark primary elements */
-     --sidebar-primary-foreground: 0 0% 98%;
-     /* Light accent background in sidebar */
-     --sidebar-accent: 240 4.8% 95.9%;
-     /* Dark text on light accent */
-     --sidebar-accent-foreground: 240 5.9% 10%;
-     /* Light border color for sidebar */
-     --sidebar-border: 220 13% 85%;  
-     /* Blue ring color for sidebar focus states */
-     --sidebar-ring: 217.2 91.2% 59.8%;
-   }
- 
-   .dark {
-     /* Retaining original dark mode for reference */
-     --background: 222.2 84% 4.9%;
-     --foreground: 210 40% 98%;
- 
-     --card: 222.2 84% 4.9%;
-     --card-foreground: 210 40% 98%;
- 
-     --popover: 222.2 84% 4.9%;
-     --popover-foreground: 210 40% 98%;
- 
-     --primary: 210 40% 98%;
-     --primary-foreground: 222.2 47.4% 11.2%;
- 
-     --secondary: 217.2 32.6% 17.5%;
-     --secondary-foreground: 210 40% 98%;
- 
-     --muted: 217.2 32.6% 17.5%;
-     --muted-foreground: 215 20.2% 65.1%;
- 
-     --accent: 217.2 32.6% 17.5%;
-     --accent-foreground: 210 40% 98%;
- 
-     --destructive: 0 62.8% 30.6%;
-     --destructive-foreground: 210 40% 98%;
- 
-     --border: 217.2 32.6% 17.5%;
-     --input: 217.2 32.6% 17.5%;
-     --ring: 212.7 26.8% 83.9%;
-     --sidebar-background: 240 5.9% 10%;
-     --sidebar-foreground: 240 4.8% 95.9%;
-     --sidebar-primary: 224.3 76.3% 48%;
-     --sidebar-primary-foreground: 0 0% 100%;
-     --sidebar-accent: 240 3.7% 15.9%;
-     --sidebar-accent-foreground: 240 4.8% 95.9%;
-     --sidebar-border: 240 3.7% 15.9%;
-     --sidebar-ring: 217.2 91.2% 59.8%;
- 
-     /* Gaming specific colors for dark mode */
-     --game-success: 120 100% 50%;
-     --game-warning: 45 100% 55%;
-     --game-disabled: 220 13% 30%;
-   }
- }
- 
- @layer base {
-   * {
-     border-color: hsl(var(--border));
-   }
- 
-   body {
-     background-color: hsl(var(--background));
-     color: hsl(var(--foreground));
-   }
- }
- 
- @layer utilities {
-   /* Background color utilities */
-   .bg-background {
-     background-color: hsl(var(--background));
-   }
- 
-   .bg-foreground {
-     background-color: hsl(var(--foreground));
-   }
- 
-   .bg-card {
-     background-color: hsl(var(--card));
-   }
- 
-   .bg-card-foreground {
-     background-color: hsl(var(--card-foreground));
-   }
- 
-   .bg-popover {
-     background-color: hsl(var(--popover));
-   }
- 
-   .bg-popover-foreground {
-     background-color: hsl(var(--popover-foreground));
-   }
- 
-   .bg-primary {
-     background-color: hsl(var(--primary));
-   }
- 
-   .bg-primary-foreground {
-     background-color: hsl(var(--primary-foreground));
-   }
- 
-   .bg-secondary {
-     background-color: hsl(var(--secondary));
-   }
- 
-   .bg-secondary-foreground {
-     background-color: hsl(var(--secondary-foreground));
-   }
- 
-   .bg-muted {
-     background-color: hsl(var(--muted));
-   }
- 
-   .bg-muted-foreground {
-     background-color: hsl(var(--muted-foreground));
-   }
- 
-   .bg-accent {
-     background-color: hsl(var(--accent));
-   }
- 
-   .bg-accent-foreground {
-     background-color: hsl(var(--accent-foreground));
-   }
- 
-   .bg-destructive {
-     background-color: hsl(var(--destructive));
-   }
- 
-   .bg-destructive-foreground {
-     background-color: hsl(var(--destructive-foreground));
-   }
- 
-   .bg-border {
-     background-color: hsl(var(--border));
-   }
- 
-   .bg-input {
-     background-color: hsl(var(--input));
-   }
- 
-   .bg-ring {
-     background-color: hsl(var(--ring));
-   }
- 
-   /* Gaming specific background colors */
-   .bg-game-success {
-     background-color: hsl(var(--game-success));
-   }
- 
-   .bg-game-warning {
-     background-color: hsl(var(--game-warning));
-   }
- 
-   .bg-game-disabled {
-     background-color: hsl(var(--game-disabled));
-   }
- 
-   /* Sidebar background colors */
-   .bg-sidebar {
-     background-color: hsl(var(--sidebar-background));
-   }
- 
-   .bg-sidebar-foreground {
-     background-color: hsl(var(--sidebar-foreground));
-   }
- 
-   .bg-sidebar-primary {
-     background-color: hsl(var(--sidebar-primary));
-   }
- 
-   .bg-sidebar-primary-foreground {
-     background-color: hsl(var(--sidebar-primary-foreground));
-   }
- 
-   .bg-sidebar-accent {
-     background-color: hsl(var(--sidebar-accent));
-   }
- 
-   .bg-sidebar-accent-foreground {
-     background-color: hsl(var(--sidebar-accent-foreground));
-   }
- 
-   /* Text color utilities */
-   .text-background {
-     color: hsl(var(--background));
-   }
- 
-   .text-foreground {
-     color: hsl(var(--foreground));
-   }
- 
-   .text-card {
-     color: hsl(var(--card));
-   }
- 
-   .text-card-foreground {
-     color: hsl(var(--card-foreground));
-   }
- 
-   .text-popover {
-     color: hsl(var(--popover));
-   }
- 
-   .text-popover-foreground {
-     color: hsl(var(--popover-foreground));
-   }
- 
-   .text-primary {
-     color: hsl(var(--primary));
-   }
- 
-   .text-primary-foreground {
-     color: hsl(var(--primary-foreground));
-   }
- 
-   .text-secondary {
-     color: hsl(var(--secondary));
-   }
- 
-   .text-secondary-foreground {
-     color: hsl(var(--secondary-foreground));
-   }
- 
-   .text-muted {
-     color: hsl(var(--muted));
-   }
- 
-   .text-muted-foreground {
-     color: hsl(var(--muted-foreground));
-   }
- 
-   .text-accent {
-     color: hsl(var(--accent));
-   }
- 
-   .text-accent-foreground {
-     color: hsl(var(--accent-foreground));
-   }
- 
-   .text-destructive {
-     color: hsl(var(--destructive));
-   }
- 
-   .text-destructive-foreground {
-     color: hsl(var(--destructive-foreground));
-   }
- 
-   .text-border {
-     color: hsl(var(--border));
-   }
- 
-   .text-input {
-     color: hsl(var(--input));
-   }
- 
-   .text-ring {
-     color: hsl(var(--ring));
-   }
- 
-   /* Gaming specific text colors */
-   .text-game-success {
-     color: hsl(var(--game-success));
-   }
- 
-   .text-game-warning {
-     color: hsl(var(--game-warning));
-   }
- 
-   .text-game-disabled {
-     color: hsl(var(--game-disabled));
-   }
- 
-   /* Sidebar text colors */
-   .text-sidebar {
-     color: hsl(var(--sidebar-background));
-   }
- 
-   .text-sidebar-foreground {
-     color: hsl(var(--sidebar-foreground));
-   }
- 
-   .text-sidebar-primary {
-     color: hsl(var(--sidebar-primary));
-   }
- 
-   .text-sidebar-primary-foreground {
-     color: hsl(var(--sidebar-primary-foreground));
-   }
- 
-   .text-sidebar-accent {
-     color: hsl(var(--sidebar-accent));
-   }
- 
-   .text-sidebar-accent-foreground {
-     color: hsl(var(--sidebar-accent-foreground));
-   }
- 
-   /* Border color utilities */
-   .border-background {
-     border-color: hsl(var(--background));
-   }
- 
-   .border-foreground {
-     border-color: hsl(var(--foreground));
-   }
- 
-   .border-card {
-     border-color: hsl(var(--card));
-   }
- 
-   .border-card-foreground {
-     border-color: hsl(var(--card-foreground));
-   }
- 
-   .border-popover {
-     border-color: hsl(var(--popover));
-   }
- 
-   .border-popover-foreground {
-     border-color: hsl(var(--popover-foreground));
-   }
- 
-   .border-primary {
-     border-color: hsl(var(--primary));
-   }
- 
-   .border-primary-foreground {
-     border-color: hsl(var(--primary-foreground));
-   }
- 
-   .border-secondary {
-     border-color: hsl(var(--secondary));
-   }
- 
-   .border-secondary-foreground {
-     border-color: hsl(var(--secondary-foreground));
-   }
- 
-   .border-muted {
-     border-color: hsl(var(--muted));
-   }
- 
-   .border-muted-foreground {
-     border-color: hsl(var(--muted-foreground));
-   }
- 
-   .border-accent {
-     border-color: hsl(var(--accent));
-   }
- 
-   .border-accent-foreground {
-     border-color: hsl(var(--accent-foreground));
-   }
- 
-   .border-destructive {
-     border-color: hsl(var(--destructive));
-   }
- 
-   .border-destructive-foreground {
-     border-color: hsl(var(--destructive-foreground));
-   }
- 
-   .border-border {
-     border-color: hsl(var(--border));
-   }
- 
-   .border-input {
-     border-color: hsl(var(--input));
-   }
- 
-   .border-ring {
-     border-color: hsl(var(--ring));
-   }
- 
-   /* Gaming specific border colors */
-   .border-game-success {
-     border-color: hsl(var(--game-success));
-   }
- 
-   .border-game-warning {
-     border-color: hsl(var(--game-warning));
-   }
- 
-   .border-game-disabled {
-     border-color: hsl(var(--game-disabled));
-   }
- 
-   /* Sidebar border colors */
-   .border-sidebar {
-     border-color: hsl(var(--sidebar-background));
-   }
- 
-   .border-sidebar-foreground {
-     border-color: hsl(var(--sidebar-foreground));
-   }
- 
-   .border-sidebar-primary {
-     border-color: hsl(var(--sidebar-primary));
-   }
- 
-   .border-sidebar-primary-foreground {
-     border-color: hsl(var(--sidebar-primary-foreground));
-   }
- 
-   .border-sidebar-accent {
-     border-color: hsl(var(--sidebar-accent));
-   }
- 
-   .border-sidebar-accent-foreground {
-     border-color: hsl(var(--sidebar-accent-foreground));
-   }
- 
-   .border-sidebar-border {
-     border-color: hsl(var(--sidebar-border));
-   }
- 
-   .border-sidebar-ring {
-     border-color: hsl(var(--sidebar-ring));
-   }
- 
-   /* Custom gradient utilities */
-   .bg-gradient-primary {
-     background-image: var(--gradient-primary);
-   }
- 
-   .bg-gradient-secondary {
-     background-image: var(--gradient-secondary);
-   }
- 
-   .bg-gradient-danger {
-     background-image: var(--gradient-danger);
-   }
- 
-   .bg-gradient-success {
-     background-image: var(--gradient-success);
-   }
- 
-   /* Custom glow utilities */
-   .shadow-glow-primary {
-     box-shadow: var(--glow-primary);
-   }
- 
-   .shadow-glow-secondary {
-     box-shadow: var(--glow-secondary);
-   }
- 
-   .shadow-glow-danger {
-     box-shadow: var(--glow-danger);
-   }
- 
-   /* Custom transition utilities */
-   .transition-smooth {
-     transition: var(--transition-smooth);
-   }
- 
-   .transition-bounce {
-     transition: var(--transition-bounce);
-   }
- 
-   /* Border radius utilities */
-   .rounded-radius {
-     border-radius: var(--radius);
-   }
- }
+
+  @layer base {
+    /**
+     * Light Theme Variables (Default)
+     *
+     * Primary color scheme for the gaming interface.
+     * Features light, energetic backgrounds with vibrant neon accents.
+     */
+    :root {
+      /* === CORE BACKGROUND COLORS === */
+      /* Main app background - soft off-white/light gray */
+      --background: 210 20% 98%;
+      /* Primary text color - deep charcoal/near-black for high contrast */
+      --foreground: 240 10% 12%;
+      /* === CARD & SURFACE COLORS === */
+      /* Card backgrounds - slightly darker than main background, but still light */
+      --card: 210 10% 95%;
+      --card-foreground: 240 10% 12%;
+ 
+      /* Popover/dropdown backgrounds - similar to card */
+      --popover: 210 10% 95%;
+      --popover-foreground: 240 10% 12%;
+ 
+      /* === PRIMARY GAMING COLORS === */
+      /* Electric blue - main brand color for buttons and highlights (retained) */
+      --primary: 210 100% 56%;
+      --primary-foreground: 0 0% 100%; /* White text on primary */
+ 
+      /* Neon purple - secondary brand color for accents (retained) */
+      --secondary: 270 95% 65%;
+      --secondary-foreground: 0 0% 100%;
+ 
+      /* === MUTED & SUBTLE COLORS === */
+      /* Muted backgrounds for less prominent elements - a soft gray */
+      --muted: 210 15% 92%;
+      --muted-foreground: 215 20% 40%;
+ 
+      /* Accent color - matches secondary for consistency (retained hue, adjusted lightness for contrast) */
+      --accent: 270 95% 65%;
+      --accent-foreground: 0 0% 100%;
+ 
+      /* === SEMANTIC COLORS === */
+      /* Neon red - for destructive actions and errors (retained) */
+      --destructive: 0 100% 60%;
+      --destructive-foreground: 0 0% 100%;
+ 
+      /* === FORM & INTERACTION COLORS === */
+      /* Border color for inputs and dividers - light gray */
+      --border: 210 10% 80%;
+      /* Input field backgrounds - slightly off-white */
+      --input: 0 0% 100%;
+      /* Focus ring color - matches primary (retained) */
+      --ring: 210 100% 56%;
+ 
+      /* === GAMING-SPECIFIC SEMANTIC COLORS === */
+      /* Bright green - for success states, achievements, wins (retained) */
+      --game-success: 120 100% 35%; /* Slightly darker for better contrast on light background */
+      /* Bright orange/yellow - for warnings, cautions, alerts (retained) */
+      --game-warning: 45 100% 50%; /* Slightly darker for better contrast on light background */
+      /* Muted blue-gray - for disabled states, unavailable options (retained) */
+      --game-disabled: 220 13% 70%; /* Lighter disabled state for light background */
+ 
+      /* === GAMING GRADIENT EFFECTS === */
+      /* Primary gradient - electric blue to cyan for buttons and highlights (retained) */
+      --gradient-primary: linear-gradient(135deg, hsl(210 100% 56%), hsl(195 100% 60%));
+      /* Secondary gradient - purple to magenta for accents (retained) */
+      --gradient-secondary: linear-gradient(135deg, hsl(270 95% 65%), hsl(285 95% 70%));
+      /* Danger gradient - red to orange for destructive actions (retained) */
+      --gradient-danger: linear-gradient(135deg, hsl(0 100% 60%), hsl(15 100% 65%));
+      /* Success gradient - green to lime for positive actions (retained) */
+      --gradient-success: linear-gradient(135deg, hsl(120 100% 50%), hsl(135 100% 55%));
+ 
+      /* === GAMING GLOW EFFECTS === */
+      /* Primary glow - electric blue shadow for buttons and focus states (retained) */
+      --glow-primary: 0 0 20px hsl(210 100% 56% / 0.3); /* Reduced opacity for lighter background */
+      /* Secondary glow - purple shadow for secondary elements (retained) */
+      --glow-secondary: 0 0 20px hsl(270 95% 65% / 0.3); /* Reduced opacity for lighter background */
+      /* Danger glow - red shadow for destructive actions (retained) */
+      --glow-danger: 0 0 20px hsl(0 100% 60% / 0.3); /* Reduced opacity for lighter background */
+ 
+      /* === GAMING TRANSITION EFFECTS === */
+      /* Smooth transition - for general hover and state changes (retained) */
+      --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      /* Bounce transition - for gaming-style button interactions (retained) */
+      --transition-bounce: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+ 
+      /* === BORDER RADIUS === */
+      /* Standard border radius for consistent rounded corners (retained) */
+      --radius: 0.5rem;
+ 
+      /* === SIDEBAR COLORS (Light Theme - adjusted for consistency) === */
+      /* Light sidebar background - slightly different from main background for distinction */
+      --sidebar-background: 210 15% 92%;
+      /* Dark text on light sidebar */
+      --sidebar-foreground: 240 5.3% 26.1%;
+      /* Dark primary elements in light sidebar */
+      --sidebar-primary: 240 5.9% 10%;
+      /* Light text on dark primary elements */
+      --sidebar-primary-foreground: 0 0% 98%;
+      /* Light accent background in sidebar */
+      --sidebar-accent: 240 4.8% 95.9%;
+      /* Dark text on light accent */
+      --sidebar-accent-foreground: 240 5.9% 10%;
+      /* Light border color for sidebar */
+      --sidebar-border: 220 13% 85%;
+      /* Blue ring color for sidebar focus states */
+      --sidebar-ring: 217.2 91.2% 59.8%;
+    }
+ 
+    .dark {
+      /* Retaining original dark mode for reference */
+      --background: 222.2 84% 4.9%;
+      --foreground: 210 40% 98%;
+ 
+      --card: 222.2 84% 4.9%;
+      --card-foreground: 210 40% 98%;
+ 
+      --popover: 222.2 84% 4.9%;
+      --popover-foreground: 210 40% 98%;
+ 
+      --primary: 210 40% 98%;
+      --primary-foreground: 222.2 47.4% 11.2%;
+ 
+      --secondary: 217.2 32.6% 17.5%;
+      --secondary-foreground: 210 40% 98%;
+ 
+      --muted: 217.2 32.6% 17.5%;
+      --muted-foreground: 215 20.2% 65.1%;
+ 
+      --accent: 217.2 32.6% 17.5%;
+      --accent-foreground: 210 40% 98%;
+ 
+      --destructive: 0 62.8% 30.6%;
+      --destructive-foreground: 210 40% 98%;
+ 
+      --border: 217.2 32.6% 17.5%;
+      --input: 217.2 32.6% 17.5%;
+      --ring: 212.7 26.8% 83.9%;
+      --sidebar-background: 240 5.9% 10%;
+      --sidebar-foreground: 240 4.8% 95.9%;
+      --sidebar-primary: 224.3 76.3% 48%;
+      --sidebar-primary-foreground: 0 0% 100%;
+      --sidebar-accent: 240 3.7% 15.9%;
+      --sidebar-accent-foreground: 240 4.8% 95.9%;
+      --sidebar-border: 240 3.7% 15.9%;
+      --sidebar-ring: 217.2 91.2% 59.8%;
+ 
+      /* Gaming specific colors for dark mode */
+      --game-success: 120 100% 50%;
+      --game-warning: 45 100% 55%;
+      --game-disabled: 220 13% 30%;
+    }
+  }
+ 
+  @layer base {
+    * {
+      border-color: hsl(var(--border));
+    }
+ 
+    body {
+      background-color: hsl(var(--background));
+      color: hsl(var(--foreground));
+    }
+  }
+ 
+  @layer utilities {
+    /* Background color utilities */
+    .bg-background {
+      background-color: hsl(var(--background));
+    }
+ 
+    .bg-foreground {
+      background-color: hsl(var(--foreground));
+    }
+ 
+    .bg-card {
+      background-color: hsl(var(--card));
+    }
+ 
+    .bg-card-foreground {
+      background-color: hsl(var(--card-foreground));
+    }
+ 
+    .bg-popover {
+      background-color: hsl(var(--popover));
+    }
+ 
+    .bg-popover-foreground {
+      background-color: hsl(var(--popover-foreground));
+    }
+ 
+    .bg-primary {
+      background-color: hsl(var(--primary));
+    }
+ 
+    .bg-primary-foreground {
+      background-color: hsl(var(--primary-foreground));
+    }
+ 
+    .bg-secondary {
+      background-color: hsl(var(--secondary));
+    }
+ 
+    .bg-secondary-foreground {
+      background-color: hsl(var(--secondary-foreground));
+    }
+ 
+    .bg-muted {
+      background-color: hsl(var(--muted));
+    }
+ 
+    .bg-muted-foreground {
+      background-color: hsl(var(--muted-foreground));
+    }
+ 
+    .bg-accent {
+      background-color: hsl(var(--accent));
+    }
+ 
+    .bg-accent-foreground {
+      background-color: hsl(var(--accent-foreground));
+    }
+ 
+    .bg-destructive {
+      background-color: hsl(var(--destructive));
+    }
+ 
+    .bg-destructive-foreground {
+      background-color: hsl(var(--destructive-foreground));
+    }
+ 
+    .bg-border {
+      background-color: hsl(var(--border));
+    }
+ 
+    .bg-input {
+      background-color: hsl(var(--input));
+    }
+ 
+    .bg-ring {
+      background-color: hsl(var(--ring));
+    }
+ 
+    /* Gaming specific background colors */
+    .bg-game-success {
+      background-color: hsl(var(--game-success));
+    }
+ 
+    .bg-game-warning {
+      background-color: hsl(var(--game-warning));
+    }
+ 
+    .bg-game-disabled {
+      background-color: hsl(var(--game-disabled));
+    }
+ 
+    /* Sidebar background colors */
+    .bg-sidebar {
+      background-color: hsl(var(--sidebar-background));
+    }
+ 
+    .bg-sidebar-foreground {
+      background-color: hsl(var(--sidebar-foreground));
+    }
+ 
+    .bg-sidebar-primary {
+      background-color: hsl(var(--sidebar-primary));
+    }
+ 
+    .bg-sidebar-primary-foreground {
+      background-color: hsl(var(--sidebar-primary-foreground));
+    }
+ 
+    .bg-sidebar-accent {
+      background-color: hsl(var(--sidebar-accent));
+    }
+ 
+    .bg-sidebar-accent-foreground {
+      background-color: hsl(var(--sidebar-accent-foreground));
+    }
+ 
+    /* Text color utilities */
+    .text-background {
+      color: hsl(var(--background));
+    }
+ 
+    .text-foreground {
+      color: hsl(var(--foreground));
+    }
+ 
+    .text-card {
+      color: hsl(var(--card));
+    }
+ 
+    .text-card-foreground {
+      color: hsl(var(--card-foreground));
+    }
+ 
+    .text-popover {
+      color: hsl(var(--popover));
+    }
+ 
+    .text-popover-foreground {
+      color: hsl(var(--popover-foreground));
+    }
+ 
+    .text-primary {
+      color: hsl(var(--primary));
+    }
+ 
+    .text-primary-foreground {
+      color: hsl(var(--primary-foreground));
+    }
+ 
+    .text-secondary {
+      color: hsl(var(--secondary));
+    }
+ 
+    .text-secondary-foreground {
+      color: hsl(var(--secondary-foreground));
+    }
+ 
+    .text-muted {
+      color: hsl(var(--muted));
+    }
+ 
+    .text-muted-foreground {
+      color: hsl(var(--muted-foreground));
+    }
+ 
+    .text-accent {
+      color: hsl(var(--accent));
+    }
+ 
+    .text-accent-foreground {
+      color: hsl(var(--accent-foreground));
+    }
+ 
+    .text-destructive {
+      color: hsl(var(--destructive));
+    }
+ 
+    .text-destructive-foreground {
+      color: hsl(var(--destructive-foreground));
+    }
+ 
+    .text-border {
+      color: hsl(var(--border));
+    }
+ 
+    .text-input {
+      color: hsl(var(--input));
+    }
+ 
+    .text-ring {
+      color: hsl(var(--ring));
+    }
+ 
+    /* Gaming specific text colors */
+    .text-game-success {
+      color: hsl(var(--game-success));
+    }
+ 
+    .text-game-warning {
+      color: hsl(var(--game-warning));
+    }
+ 
+    .text-game-disabled {
+      color: hsl(var(--game-disabled));
+    }
+ 
+    /* Sidebar text colors */
+    .text-sidebar {
+      color: hsl(var(--sidebar-background));
+    }
+ 
+    .text-sidebar-foreground {
+      color: hsl(var(--sidebar-foreground));
+    }
+ 
+    .text-sidebar-primary {
+      color: hsl(var(--sidebar-primary));
+    }
+ 
+    .text-sidebar-primary-foreground {
+      color: hsl(var(--sidebar-primary-foreground));
+    }
+ 
+    .text-sidebar-accent {
+      color: hsl(var(--sidebar-accent));
+    }
+ 
+    .text-sidebar-accent-foreground {
+      color: hsl(var(--sidebar-accent-foreground));
+    }
+ 
+    /* Border color utilities */
+    .border-background {
+      border-color: hsl(var(--background));
+    }
+ 
+    .border-foreground {
+      border-color: hsl(var(--foreground));
+    }
+ 
+    .border-card {
+      border-color: hsl(var(--card));
+    }
+ 
+    .border-card-foreground {
+      border-color: hsl(var(--card-foreground));
+    }
+ 
+    .border-popover {
+      border-color: hsl(var(--popover));
+    }
+ 
+    .border-popover-foreground {
+      border-color: hsl(var(--popover-foreground));
+    }
+ 
+    .border-primary {
+      border-color: hsl(var(--primary));
+    }
+ 
+    .border-primary-foreground {
+      border-color: hsl(var(--primary-foreground));
+    }
+ 
+    .border-secondary {
+      border-color: hsl(var(--secondary));
+    }
+ 
+    .border-secondary-foreground {
+      border-color: hsl(var(--secondary-foreground));
+    }
+ 
+    .border-muted {
+      border-color: hsl(var(--muted));
+    }
+ 
+    .border-muted-foreground {
+      border-color: hsl(var(--muted-foreground));
+    }
+ 
+    .border-accent {
+      border-color: hsl(var(--accent));
+    }
+ 
+    .border-accent-foreground {
+      border-color: hsl(var(--accent-foreground));
+    }
+ 
+    .border-destructive {
+      border-color: hsl(var(--destructive));
+    }
+ 
+    .border-destructive-foreground {
+      border-color: hsl(var(--destructive-foreground));
+    }
+ 
+    .border-border {
+      border-color: hsl(var(--border));
+    }
+ 
+    .border-input {
+      border-color: hsl(var(--input));
+    }
+ 
+    .border-ring {
+      border-color: hsl(var(--ring));
+    }
+ 
+    /* Gaming specific border colors */
+    .border-game-success {
+      border-color: hsl(var(--game-success));
+    }
+ 
+    .border-game-warning {
+      border-color: hsl(var(--game-warning));
+    }
+ 
+    .border-game-disabled {
+      border-color: hsl(var(--game-disabled));
+    }
+ 
+    /* Sidebar border colors */
+    .border-sidebar {
+      border-color: hsl(var(--sidebar-background));
+    }
+ 
+    .border-sidebar-foreground {
+      border-color: hsl(var(--sidebar-foreground));
+    }
+ 
+    .border-sidebar-primary {
+      border-color: hsl(var(--sidebar-primary));
+    }
+ 
+    .border-sidebar-primary-foreground {
+      border-color: hsl(var(--sidebar-primary-foreground));
+    }
+ 
+    .border-sidebar-accent {
+      border-color: hsl(var(--sidebar-accent));
+    }
+ 
+    .border-sidebar-accent-foreground {
+      border-color: hsl(var(--sidebar-accent-foreground));
+    }
+ 
+    .border-sidebar-border {
+      border-color: hsl(var(--sidebar-border));
+    }
+ 
+    .border-sidebar-ring {
+      border-color: hsl(var(--sidebar-ring));
+    }
+ 
+    /* Custom gradient utilities */
+    .bg-gradient-primary {
+      background-image: var(--gradient-primary);
+    }
+ 
+    .bg-gradient-secondary {
+      background-image: var(--gradient-secondary);
+    }
+ 
+    .bg-gradient-danger {
+      background-image: var(--gradient-danger);
+    }
+ 
+    .bg-gradient-success {
+      background-image: var(--gradient-success);
+    }
+ 
+    /* Custom glow utilities */
+    .shadow-glow-primary {
+      box-shadow: var(--glow-primary);
+    }
+ 
+    .shadow-glow-secondary {
+      box-shadow: var(--glow-secondary);
+    }
+ 
+    .shadow-glow-danger {
+      box-shadow: var(--glow-danger);
+    }
+ 
+    /* Custom transition utilities */
+    .transition-smooth {
+      transition: var(--transition-smooth);
+    }
+ 
+    .transition-bounce {
+      transition: var(--transition-bounce);
+    }
+ 
+    /* Border radius utilities */
+    .rounded-radius {
+      border-radius: var(--radius);
+    }
+  }
+ 
+  /* --- Custom Animations & Clip-Paths for Glassmorphic Components --- */
+  @layer utilities {
+     @keyframes pulse-glow {
+         0%, 100% {
+             box-shadow: 0 0 0px 0px rgba(255, 255, 255, 0.3);
+             transform: scale(1);
+         }
+         50% {
+             box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.6);
+             transform: scale(1.02);
+         }
+     }
+ 
+     .animate-pulse-glow {
+         animation: pulse-glow 2s infinite ease-in-out;
+     }
+ 
+     /* Custom clip-path for the checkbox checkmark */
+     .clip-path-checkbox {
+         clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+     }
+  }
+
+  /* Add this within your @layer utilities in index.css */
+@layer utilities {
+  /* Removed text-shadow-neon as it doesn't fit the new style */
+
+  @keyframes pulse-glow {
+      0%, 100% {
+          box-shadow: 0 0 0px 0px rgba(0, 0, 0, 0.1); /* Subtle black glow for lighter background */
+          transform: scale(1);
+      }
+      50% {
+          box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.2); /* More visible black glow */
+          transform: scale(1.02);
+      }
+  }
+
+  .animate-pulse-glow {
+      animation: pulse-glow 2s infinite ease-in-out;
+  }
+
+  /* Custom clip-path for the checkbox checkmark */
+  /* This remains largely the same, as the internal checkmark color is now white on a filled box */
+  .clip-path-checkbox {
+      clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  }
+
+  .light-glass-pane {
+    background-color: hsl(210 50% 95% / 0.6);
+    backdrop-filter: blur(6px); /* Reduced from 12px for less blurriness */
+    border: 1px solid hsl(210 50% 95% / 0.4);
+    box-shadow: 0 8px 32px 0 hsl(220 10% 20% / 0.1);
+  }
+
+  .light-glass-input {
+    background-color: hsl(210 50% 90% / 0.7); /* Slightly darker blue for inputs */
+    border: 1px solid hsl(210 50% 95% / 0.2);
+    box-shadow: inset 0 2px 4px 0 hsl(220 10% 20% / 0.05);
+}
+}
+
+/* Also, ensure your global body or main container styles (where you'd apply the glassmorphic background)
+ reflect the wrapper styles from the example if you want the form itself to be glassmorphic.
+ This would typically be on a wrapper div in your main App.js or a form container.
+
+ Example (NOT in FormComponents.jsx or index.css utilities, but in your actual form usage):
+ <div className="w-400px rounded-lg p-30px text-center border border-white/50 backdrop-blur-md">
+     <form>
+         ... your FormComponents here ...
+     </form>
+ </div>
+*/

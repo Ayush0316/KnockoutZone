@@ -1,6 +1,6 @@
 import { Route } from "react-router-dom";
-import ButtonHelp from "../../help/ButtonHelp";
-import  FormComponentsHelp  from "../../help/FormComponentsHelp"; 
+import ButtonHelp from "../../pages/help/ButtonHelp";
+import  FormComponentsHelp  from "../../pages/help/FormComponentsHelp"; 
 
 const DevRoutes = () => {
   return (
