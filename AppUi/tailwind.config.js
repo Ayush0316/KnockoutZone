@@ -52,7 +52,7 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				// Gaming specific colors
+				// Gaming specific colors (from 'main' branch)
 				game: {
 					success: 'hsl(var(--game-success))',
 					warning: 'hsl(var(--game-warning))',
@@ -67,6 +67,11 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				loader: {
+					primary: 'hsl(var(--loader-primary))',
+					secondary: 'hsl(var(--loader-secondary))',
+					glass: 'hsl(var(--loader-glass))'
 				}
 			},
 			borderRadius: {
@@ -91,6 +96,34 @@ export default {
 						height: '0'
 					}
 				},
+				'loader-slide': {
+					'0%, 100%': {
+						transform: 'translateX(-80px)'
+					},
+					'50%': {
+						transform: 'translateX(80px)'
+					}
+				},
+				'fade-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'scale(0.95)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'scale(1)'
+					}
+				},
+				'fade-out': {
+					'0%': {
+						opacity: '1',
+						transform: 'scale(1)'
+					},
+					'100%': {
+						opacity: '0',
+						transform: 'scale(0.95)'
+					}
+				},
 				'pulse-glow': {
 					'0%, 100%': {
 						boxShadow: '0 0 20px hsl(var(--primary) / 0.5)'
@@ -103,6 +136,10 @@ export default {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
+				'loader-slide': 'loader-slide 2s ease-in-out infinite',
+				'loader-slide-delayed': 'loader-slide 2s ease-in-out infinite -1s',
+				'fade-in': 'fade-in 0.3s ease-out',
+				'fade-out': 'fade-out 0.3s ease-out',
 				'pulse-glow': 'pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
 				'spin-slow': 'spin 3s linear infinite'
 			},

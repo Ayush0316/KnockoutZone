@@ -1,15 +1,15 @@
 /**
  * Gaming Theme Styles - KnockoutZone AppUI
- * 
+ *
  * This file contains the complete design system for the gaming-themed application.
  * Built with Tailwind CSS v4 and custom CSS variables for a cohesive gaming experience.
- * 
+ *
  * Structure:
  * 1. Tailwind CSS import
  * 2. CSS Variables (Light & Dark themes)
  * 3. Base layer styles
  * 4. Utility layer classes
- * 
+ *
  * Color Format: All colors use HSL format for better manipulation and consistency
  * Theme Support: Full light/dark mode support with gaming-specific colors
  */
@@ -18,126 +18,84 @@
 
 /**
  * Design System CSS Variables
- * 
+ *
  * All colors, gradients, effects, and design tokens are defined here.
  * This ensures consistency across the entire application and enables
  * easy theme switching and customization.
- * 
+ *
  * Color Naming Convention:
  * - Standard UI colors: --background, --foreground, --primary, etc.
  * - Gaming colors: --game-success, --game-warning, --game-disabled
  * - Sidebar colors: --sidebar-background, --sidebar-primary, etc.
- * 
+ *
  * All colors MUST be in HSL format for optimal color manipulation.
  */
 
 @layer base {
   /**
    * Light Theme Variables (Default)
-   * 
+   *
    * Primary color scheme for the gaming interface.
    * Features dark cosmic backgrounds with bright neon accents.
    */
   :root {
-    /* === CORE BACKGROUND COLORS === */
-    /* Main app background - deep cosmic dark */
     --background: 240 10% 8%;
-    /* Primary text color - bright white with blue tint */
     --foreground: 210 40% 95%;
-
-    /* === CARD & SURFACE COLORS === */
-    /* Card backgrounds - slightly lighter than main background */
     --card: 240 8% 12%;
     --card-foreground: 210 40% 95%;
 
-    /* Popover/dropdown backgrounds */
     --popover: 240 8% 12%;
     --popover-foreground: 210 40% 95%;
-
-    /* === PRIMARY GAMING COLORS === */
-    /* Electric blue - main brand color for buttons and highlights */
+    
     --primary: 210 100% 56%;
     --primary-foreground: 240 10% 8%;
 
-    /* Neon purple - secondary brand color for accents */
     --secondary: 270 95% 65%;
     --secondary-foreground: 240 10% 8%;
 
-    /* === MUTED & SUBTLE COLORS === */
-    /* Muted backgrounds for less prominent elements */
     --muted: 240 8% 15%;
     --muted-foreground: 215 20% 65%;
 
-    /* Accent color - matches secondary for consistency */
     --accent: 270 95% 65%;
     --accent-foreground: 240 10% 8%;
-
-    /* === SEMANTIC COLORS === */
-    /* Neon red - for destructive actions and errors */
+    
     --destructive: 0 100% 60%;
     --destructive-foreground: 240 10% 8%;
 
-    /* === FORM & INTERACTION COLORS === */
-    /* Border color for inputs and dividers */
     --border: 240 8% 20%;
-    /* Input field backgrounds */
     --input: 240 8% 15%;
-    /* Focus ring color - matches primary */
+    
     --ring: 210 100% 56%;
 
-    /* === GAMING-SPECIFIC SEMANTIC COLORS === */
-    /* Bright green - for success states, achievements, wins */
     --game-success: 120 100% 50%;
-    /* Bright orange/yellow - for warnings, cautions, alerts */
     --game-warning: 45 100% 55%;
-    /* Muted blue-gray - for disabled states, unavailable options */
     --game-disabled: 220 13% 30%;
     
-    /* === GAMING GRADIENT EFFECTS === */
-    /* Primary gradient - electric blue to cyan for buttons and highlights */
     --gradient-primary: linear-gradient(135deg, hsl(210 100% 56%), hsl(195 100% 60%));
-    /* Secondary gradient - purple to magenta for accents */
     --gradient-secondary: linear-gradient(135deg, hsl(270 95% 65%), hsl(285 95% 70%));
-    /* Danger gradient - red to orange for destructive actions */
     --gradient-danger: linear-gradient(135deg, hsl(0 100% 60%), hsl(15 100% 65%));
-    /* Success gradient - green to lime for positive actions */
     --gradient-success: linear-gradient(135deg, hsl(120 100% 50%), hsl(135 100% 55%));
     
-    /* === GAMING GLOW EFFECTS === */
-    /* Primary glow - electric blue shadow for buttons and focus states */
     --glow-primary: 0 0 20px hsl(210 100% 56% / 0.5);
-    /* Secondary glow - purple shadow for secondary elements */
     --glow-secondary: 0 0 20px hsl(270 95% 65% / 0.5);
-    /* Danger glow - red shadow for destructive actions */
     --glow-danger: 0 0 20px hsl(0 100% 60% / 0.5);
     
-    /* === GAMING TRANSITION EFFECTS === */
-    /* Smooth transition - for general hover and state changes */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    /* Bounce transition - for gaming-style button interactions */
     --transition-bounce: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-
-    /* === BORDER RADIUS === */
-    /* Standard border radius for consistent rounded corners */
     --radius: 0.5rem;
 
-    /* === SIDEBAR COLORS (Light Theme) === */
-    /* Light sidebar background */
     --sidebar-background: 0 0% 98%;
-    /* Dark text on light sidebar */
     --sidebar-foreground: 240 5.3% 26.1%;
-    /* Dark primary elements in light sidebar */
     --sidebar-primary: 240 5.9% 10%;
-    /* Light text on dark primary elements */
     --sidebar-primary-foreground: 0 0% 98%;
-    /* Light accent background in sidebar */
     --sidebar-accent: 240 4.8% 95.9%;
-    /* Dark text on light accent */
     --sidebar-accent-foreground: 240 5.9% 10%;
-    /* Light border color for sidebar */
     --sidebar-border: 220 13% 91%;
-    /* Blue ring color for sidebar focus states */
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    --loader-primary: 224 100% 67%;
+    --loader-secondary: 224 85% 53%;
+    --loader-glass: 224 85% 53%;
   }
 
   .dark {
@@ -177,10 +135,14 @@
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
     
-    /* Gaming specific colors for dark mode */
     --game-success: 120 100% 50%;
     --game-warning: 45 100% 55%;
     --game-disabled: 220 13% 30%;
+
+    /* === LOADER SPECIFIC COLORS (Dark Mode - assuming same values for now) === */
+    --loader-primary: 224 100% 67%;
+    --loader-secondary: 224 85% 53%;
+    --loader-glass: 224 85% 53%;
   }
 }
 
@@ -196,7 +158,6 @@
 }
 
 @layer utilities {
-  /* Background color utilities */
   .bg-background {
     background-color: hsl(var(--background));
   }
@@ -273,7 +234,6 @@
     background-color: hsl(var(--ring));
   }
   
-  /* Gaming specific background colors */
   .bg-game-success {
     background-color: hsl(var(--game-success));
   }
@@ -286,7 +246,6 @@
     background-color: hsl(var(--game-disabled));
   }
   
-  /* Sidebar background colors */
   .bg-sidebar {
     background-color: hsl(var(--sidebar-background));
   }
@@ -310,8 +269,19 @@
   .bg-sidebar-accent-foreground {
     background-color: hsl(var(--sidebar-accent-foreground));
   }
+
+  .bg-loader-primary {
+    background-color: hsl(var(--loader-primary));
+  }
   
-  /* Text color utilities */
+  .bg-loader-secondary {
+    background-color: hsl(var(--loader-secondary));
+  }
+  
+  .bg-loader-glass {
+    background-color: hsl(var(--loader-glass));
+  }
+  
   .text-background {
     color: hsl(var(--background));
   }
@@ -388,7 +358,6 @@
     color: hsl(var(--ring));
   }
   
-  /* Gaming specific text colors */
   .text-game-success {
     color: hsl(var(--game-success));
   }
@@ -401,7 +370,6 @@
     color: hsl(var(--game-disabled));
   }
   
-  /* Sidebar text colors */
   .text-sidebar {
     color: hsl(var(--sidebar-background));
   }
@@ -425,8 +393,19 @@
   .text-sidebar-accent-foreground {
     color: hsl(var(--sidebar-accent-foreground));
   }
+
+  .text-loader-primary {
+    color: hsl(var(--loader-primary));
+  }
   
-  /* Border color utilities */
+  .text-loader-secondary {
+    color: hsl(var(--loader-secondary));
+  }
+  
+  .text-loader-glass {
+    color: hsl(var(--loader-glass));
+  }
+  
   .border-background {
     border-color: hsl(var(--background));
   }
@@ -503,7 +482,6 @@
     border-color: hsl(var(--ring));
   }
   
-  /* Gaming specific border colors */
   .border-game-success {
     border-color: hsl(var(--game-success));
   }
@@ -516,7 +494,6 @@
     border-color: hsl(var(--game-disabled));
   }
   
-  /* Sidebar border colors */
   .border-sidebar {
     border-color: hsl(var(--sidebar-background));
   }
@@ -548,8 +525,19 @@
   .border-sidebar-ring {
     border-color: hsl(var(--sidebar-ring));
   }
+
+  .border-loader-primary {
+    border-color: hsl(var(--loader-primary));
+  }
   
-  /* Custom gradient utilities */
+  .border-loader-secondary {
+    border-color: hsl(var(--loader-secondary));
+  }
+  
+  .border-loader-glass {
+    border-color: hsl(var(--loader-glass));
+  }
+  
   .bg-gradient-primary {
     background-image: var(--gradient-primary);
   }
@@ -566,7 +554,6 @@
     background-image: var(--gradient-success);
   }
   
-  /* Custom glow utilities */
   .shadow-glow-primary {
     box-shadow: var(--glow-primary);
   }
@@ -579,7 +566,6 @@
     box-shadow: var(--glow-danger);
   }
   
-  /* Custom transition utilities */
   .transition-smooth {
     transition: var(--transition-smooth);
   }
@@ -588,7 +574,6 @@
     transition: var(--transition-bounce);
   }
   
-  /* Border radius utilities */
   .rounded-radius {
     border-radius: var(--radius);
   }
