@@ -43,7 +43,7 @@ const Footer = () => {
     ];
 
     return (
-        <footer id="contact" className="relative bg-gradient-to-br from-background via-card to-background overflow-hidden">
+        <footer className="relative bg-gradient-to-br from-background via-card to-background overflow-hidden">
             {/* Decorative elements - maintaining glassmorphism theme */}
             <div className="absolute inset-0 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/50 to-transparent"></div>

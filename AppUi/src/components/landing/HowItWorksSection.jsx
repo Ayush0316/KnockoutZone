@@ -3,6 +3,7 @@ import { Plus, Users, Play, Trophy, ArrowRight, CheckCircle } from 'lucide-react
 import Button from '../common/Buttons/ButtonComponent';
 import { useNavigate } from 'react-router-dom';
 import { GUEST_PATH } from '../../routes/guest/GuestPaths';
+import { SECTION_IDS } from '../../utils/constants/landingSections';
 
 const HowItWorksSection = () => {
   const navigate = useNavigate();
@@ -35,7 +36,7 @@ const HowItWorksSection = () => {
   ];
 
   return (
-    <section id="how-it-works" className="relative py-24 px-4 overflow-hidden">
+    <section id={SECTION_IDS.HOW_IT_WORKS} className="relative py-24 px-4 overflow-hidden">
       {/* Background elements with glassmorphism */}
       <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background to-background/95">
         {/* Animated gradient orbs */}

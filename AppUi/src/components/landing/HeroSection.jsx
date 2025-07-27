@@ -16,7 +16,7 @@ const HeroSection = () => {
     };
 
     return (
-        <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <section id={SECTION_IDS.HERO} className="relative min-h-screen flex items-center justify-center overflow-hidden">
             {/* Background gradient - adapting to glassmorphism theme */}
             <div className="absolute inset-0 bg-gradient-to-br from-background via-background/90 to-background/80"></div>
 

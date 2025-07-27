@@ -10,6 +10,7 @@ import {
   Users,
   Headphones
 } from 'lucide-react';
+import { SECTION_IDS } from '../../utils/constants/landingSections';
 import Button from '../common/Buttons/ButtonComponent';
 
 const ContactSection = () => {
@@ -83,7 +84,7 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="relative py-24 px-4 overflow-hidden">
+    <section id={SECTION_IDS.CONTACT} className="relative py-24 px-4 overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background to-background/50"></div>

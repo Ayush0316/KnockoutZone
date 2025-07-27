@@ -1,5 +1,6 @@
 import React from 'react';
 import { Trophy, Users, Clock, Star, Shield, Zap } from 'lucide-react';
+import { SECTION_IDS } from '../../utils/constants/landingSections';
 
 const AboutSection = () => {
   const stats = [
@@ -28,7 +29,7 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className="relative py-24 px-4 overflow-hidden">
+    <section id={SECTION_IDS.ABOUT} className="relative py-24 px-4 overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background">
         {/* Animated gradient orbs */}

@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { GUEST_PATH } from '../../routes/guest/GuestPaths';
 import { UI_TEXT } from '../../utils/constants/landingConstants';
+import { SECTION_IDS } from '../../utils/constants/landingSections';
 import Button from '../common/Buttons/ButtonComponent';
 
 const FeaturesSection = () => {
@@ -51,7 +52,7 @@ const FeaturesSection = () => {
     ];
 
     return (
-        <section id="features" className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <section id={SECTION_IDS.FEATURES} className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
             {/* Background effects - maintaining glassmorphism theme */}
             <div className="absolute inset-0">
                 <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background to-background/50"></div>
