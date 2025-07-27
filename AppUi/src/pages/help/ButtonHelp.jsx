@@ -13,11 +13,9 @@ const ButtonHelp = () => {
           </p>
         </div>
 
-        {/* Live Examples Section */}
         <div className="mb-12">
           <h2 className="text-2xl font-bold mb-6 text-primary">Live Examples</h2>
           
-          {/* Basic Variants */}
           <div className="mb-8">
             <h3 className="text-xl font-semibold mb-4">Button Variants</h3>
             <div className="flex flex-wrap gap-4 p-6 bg-card rounded-lg border">
@@ -32,7 +30,6 @@ const ButtonHelp = () => {
             </div>
           </div>
 
-          {/* Sizes */}
           <div className="mb-8">
             <h3 className="text-xl font-semibold mb-4">Button Sizes</h3>
             <div className="flex flex-wrap items-center gap-4 p-6 bg-card rounded-lg border">
@@ -45,7 +42,6 @@ const ButtonHelp = () => {
             </div>
           </div>
 
-          {/* With Icons */}
           <div className="mb-8">
             <h3 className="text-xl font-semibold mb-4">Buttons with Icons</h3>
             <div className="flex flex-wrap gap-4 p-6 bg-card rounded-lg border">
@@ -67,7 +63,6 @@ const ButtonHelp = () => {
             </div>
           </div>
 
-          {/* Loading States */}
           <div className="mb-8">
             <h3 className="text-xl font-semibold mb-4">Loading States</h3>
             <div className="flex flex-wrap gap-4 p-6 bg-card rounded-lg border">
@@ -83,7 +78,6 @@ const ButtonHelp = () => {
             </div>
           </div>
 
-          {/* Disabled States */}
           <div className="mb-8">
             <h3 className="text-xl font-semibold mb-4">Disabled States</h3>
             <div className="flex flex-wrap gap-4 p-6 bg-card rounded-lg border">
@@ -98,8 +92,6 @@ const ButtonHelp = () => {
               </Button>
             </div>
           </div>
-
-          {/* Polymorphic Rendering (asChild) */}
           <div className="mb-8">
             <h3 className="text-xl font-semibold mb-4">Polymorphic Rendering (asChild)</h3>
             <div className="flex flex-wrap gap-4 p-6 bg-card rounded-lg border">
@@ -126,7 +118,6 @@ const ButtonHelp = () => {
           </div>
         </div>
 
-        {/* Documentation Content */}
         <div className="prose prose-invert max-w-none">
           <h2 className="text-2xl font-bold mb-4 text-primary">Features</h2>
           <ul className="list-disc list-inside space-y-2 mb-6">
