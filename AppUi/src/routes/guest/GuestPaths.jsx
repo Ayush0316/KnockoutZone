@@ -1,4 +1,4 @@
-const GUEST_BASE = "/"
+const GUEST_BASE = ""
 
 export const GUEST_PATH = {
     LANDING: `${GUEST_BASE}/*`,

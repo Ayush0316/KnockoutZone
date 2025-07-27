@@ -92,7 +92,6 @@ const ButtonHelp = () => {
               </Button>
             </div>
           </div>
-
           <div className="mb-8">
             <h3 className="text-xl font-semibold mb-4">Polymorphic Rendering (asChild)</h3>
             <div className="flex flex-wrap gap-4 p-6 bg-card rounded-lg border">
@@ -208,7 +207,7 @@ const ButtonHelp = () => {
           <div className="mt-8 p-4 bg-muted rounded-lg">
             <p className="text-sm text-muted-foreground">
               <strong>Note:</strong> This is a development help page for testing the Button component. 
-              The component is located at <code>/src/utils/ButtonComponent.jsx</code> and uses default export.
+              The component is located at <code>/src/components/common/Button/ButtonComponent.jsx</code> and uses default export.
             </p>
           </div>
         </div>

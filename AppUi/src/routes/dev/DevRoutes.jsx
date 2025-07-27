@@ -7,7 +7,8 @@ const DevRoutes = () => {
     <>
       <Route path="/dev/help/button" element={<ButtonHelp />} />
       <Route path="/dev/help/form" element={<FormComponentsHelp />} />
-      {/* Add more routes as needed */}
+      <Route path="/dev/help/toast" element={<ToastDemo />} />
+        {/* Add more routes as needed */}
     </>
   );
 };
