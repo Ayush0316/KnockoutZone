@@ -1,4 +1,39 @@
-# KnockoutZone – Backend (Spring Boot)
+# KnockoutZone – Backend 
+The backend service of KnockoutZone is built using
+- **Spring Boot** - Backend Framework for building REST APIs
+- **Maven** - Project Build and dependency management
+- **PostgreSQL** - Relational database
+- **JWT(JSON Web Token)** - Secure authentication mechanism
+
+### 📁 Project Structure
+``` sh
+src/
+├── main/
+│ ├── java/com/knockoutzone/
+│ │ ├── config/ 
+│ │ ├── controller/ 
+│ │ ├── dto/
+│ │ ├── entity/
+│ │ ├── exception/
+│ │ ├── filters/ # JWT filters
+│ │ ├── repository/ # Data access layer
+│ │ ├── service/ # Interfaces
+│ │ ├── service/impl/ # Service implementations
+│ │ ├── util/ # Helper classes
+│ │ └── KnockoutZoneBackendApplication.java # Main Spring Boot application class
+│ └── resources/
+│ ├── application.properties # Default configuration
+│ ├── application-dev.properties # Development environment configuration
+│ ├── application-prod.properties # Production environment configuration
+│ ├── application-test.properties # Test environment configuration
+│ └── logback-spring.xml # Logging configuration
+└── test/
+  └── java/com/knockoutzone/
+    ├── util
+    └── KnockoutZoneBackendApplicationTests.java
+
+  
+```
 
 ## 🚀 Quickstart Guide
 
@@ -7,6 +42,8 @@
 - **Java 21**
 - **Maven 3.6+**
 - **PostgreSQL**
+- **Git**
+- **IDE**
 
 _Check your versions:_
 ```sh
@@ -20,20 +57,20 @@ psql --version
 ### 2. Get the Code
 
 ```sh
-git clone <your-repo-url>
+git clone https://github.com/Ayush0316/KnockoutZone.git
 cd KnockoutZone/app(backend)
 ```
 
 ---
 
-### 3. Configure Environment
+### 3. ⚙️ Configuration
 
 ```sh
 cp .env-sample .env   # create your local env file
 ```
 Open `.env` and set:
 ```env
-DB_USERNAME=postgres
+DB_USERNAME=postgres  
 DB_PASSWORD=******
 DB_NAME=knockoutzone_db
 # (adjust SERVER_PORT, JWT_SECRET, etc. if needed)
