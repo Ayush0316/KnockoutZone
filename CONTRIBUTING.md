@@ -17,22 +17,7 @@ To get the KnockOutZone running on your local machine:
     ```bash
     cd KnockoutZone
     ```
-4. **Install Dependencies:**
-    #### Frontend
-    ```bash
-    cd AppUi
-    npm install
-    ```
 
-5. **Run Locally:**
-    #### Frontend
-    ```bash
-    npm run dev
-    ```
-
-    Visit `http://localhost:3000`
-
----
 
 ## 🎯 Finding Tasks & Issues
 
@@ -84,43 +69,10 @@ Once you've chosen an issue:
         * Explain what changes you made and why.
         * Provide screenshots or GIFs if it's a visual change.
 
-## Project Structure
 
-```markdown
-KnockOutZone/
-|
-├── AppUi/
-│   │
-│   ├── public/
-│   │   └── index.html
-│   │
-│   ├── src/
-│   │   ├── assets/              # Static assets (images, icons, etc.)
-│   │   ├── components/          # Reusable UI components (Buttons, Cards,  Modals)
-│   │   ├── features/            # Feature-specific logic (auth, tournament,    matches)
-│   │   ├── pages/               # Route-level pages
-│   │   ├── layouts/             # Layout components (Sidebar, Navbar, etc.)
-│   │   ├── services/            # API layer
-│   │   ├── hooks/               # Custom reusable hooks
-│   │   ├── store/               # Redux (or Zustand/Recoil) setup
-│   │   ├── utils/               # Helper functions, constants
-│   │   ├── routes/              # React Router config
-│   │   ├── styles/              # Global styles and Tailwind config
-│   │   ├── App.jsx              # Root app component
-│   │   └── main.jsx             # Entry point
-│   │
-│   ├── .env
-│   ├── tailwind.config.js
-│   ├── vite.config.js           # If using Vite
-│   └── package.json
-
-```
 
 ## 📏 Code Style & Guidelines
 
-* **JavaScript:** Follow a consistent, readable JavaScript style. Use `const` and `let` appropriately, prefer modern ES6+ syntax.
-* **HTML:** Ensure semantic HTML structure.
-* **CSS:** Use tailwindcss.
 * **Comments:** Add comments where the code logic might not be immediately obvious.
 * **Modularity:** Try to keep changes focused within relevant files and folder.
 * Avoid using *magic strings* and use proper desing principals.
