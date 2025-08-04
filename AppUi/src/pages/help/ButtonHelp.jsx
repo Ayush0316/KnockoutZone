@@ -4,7 +4,7 @@ import { Play, Download, Settings, Trash2 } from "lucide-react";
 
 const ButtonHelp = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground p-8">
+    <div className="min-h-screen bg-transparent text-foreground p-8">
       <div className="max-w-4xl mx-auto">
         <div className="mb-8">
           <h1 className="text-4xl font-bold mb-4 text-primary">Button Component Documentation</h1>
@@ -18,7 +18,8 @@ const ButtonHelp = () => {
           
           <div className="mb-8">
             <h3 className="text-xl font-semibold mb-4">Button Variants</h3>
-            <div className="flex flex-wrap gap-4 p-6 bg-card rounded-lg border">
+            {/* Changed bg-card and border to light-glass-pane */}
+            <div className="flex flex-wrap gap-4 p-6 light-glass-pane rounded-lg">
               <Button variant="primary">Primary</Button>
               <Button variant="secondary">Secondary</Button>
               <Button variant="danger">Danger</Button>
@@ -32,7 +33,8 @@ const ButtonHelp = () => {
 
           <div className="mb-8">
             <h3 className="text-xl font-semibold mb-4">Button Sizes</h3>
-            <div className="flex flex-wrap items-center gap-4 p-6 bg-card rounded-lg border">
+            {/* Changed bg-card and border to light-glass-pane */}
+            <div className="flex flex-wrap items-center gap-4 p-6 light-glass-pane rounded-lg">
               <Button size="sm" variant="primary">Small</Button>
               <Button size="default" variant="primary">Default</Button>
               <Button size="lg" variant="primary">Large</Button>
@@ -44,7 +46,8 @@ const ButtonHelp = () => {
 
           <div className="mb-8">
             <h3 className="text-xl font-semibold mb-4">Buttons with Icons</h3>
-            <div className="flex flex-wrap gap-4 p-6 bg-card rounded-lg border">
+            {/* Changed bg-card and border to light-glass-pane */}
+            <div className="flex flex-wrap gap-4 p-6 light-glass-pane rounded-lg">
               <Button variant="primary">
                 <Play className="mr-2 h-4 w-4" />
                 Start Game
@@ -65,7 +68,8 @@ const ButtonHelp = () => {
 
           <div className="mb-8">
             <h3 className="text-xl font-semibold mb-4">Loading States</h3>
-            <div className="flex flex-wrap gap-4 p-6 bg-card rounded-lg border">
+            {/* Changed bg-card and border to light-glass-pane */}
+            <div className="flex flex-wrap gap-4 p-6 light-glass-pane rounded-lg">
               <Button variant="primary" isLoading>
                 Loading...
               </Button>
@@ -80,7 +84,8 @@ const ButtonHelp = () => {
 
           <div className="mb-8">
             <h3 className="text-xl font-semibold mb-4">Disabled States</h3>
-            <div className="flex flex-wrap gap-4 p-6 bg-card rounded-lg border">
+            {/* Changed bg-card and border to light-glass-pane */}
+            <div className="flex flex-wrap gap-4 p-6 light-glass-pane rounded-lg">
               <Button variant="primary" disabled>
                 Disabled Primary
               </Button>
@@ -94,7 +99,8 @@ const ButtonHelp = () => {
           </div>
           <div className="mb-8">
             <h3 className="text-xl font-semibold mb-4">Polymorphic Rendering (asChild)</h3>
-            <div className="flex flex-wrap gap-4 p-6 bg-card rounded-lg border">
+            {/* Changed bg-card and border to light-glass-pane */}
+            <div className="flex flex-wrap gap-4 p-6 light-glass-pane rounded-lg">
               <Button asChild variant="primary">
                 <a href="#demo" className="no-underline">
                   Link as Button
@@ -132,17 +138,19 @@ const ButtonHelp = () => {
           </ul>
 
           <h2 className="text-2xl font-bold mb-4 text-primary">Installation</h2>
-          <div className="bg-card p-4 rounded-lg border mb-6">
+          {/* Changed bg-card and border to light-glass-pane */}
+          <div className="p-4 rounded-lg mb-6 light-glass-pane">
             <code className="text-sm">
               import Button from '../utils/ButtonComponent';
             </code>
           </div>
 
           <h2 className="text-2xl font-bold mb-4 text-primary">Props</h2>
-          <div className="overflow-x-auto mb-6">
-            <table className="w-full border-collapse border border-border">
+          {/* Added glassmorphic effect to the table's container */}
+          <div className="overflow-x-auto mb-6 p-4 light-glass-pane rounded-lg">
+            <table className="w-full">
               <thead>
-                <tr className="bg-muted">
+                <tr className="bg-transparent"> {/* Made table header transparent */}
                   <th className="border border-border p-3 text-left">Prop</th>
                   <th className="border border-border p-3 text-left">Type</th>
                   <th className="border border-border p-3 text-left">Default</th>
@@ -204,7 +212,8 @@ const ButtonHelp = () => {
             </div>
           </div>
 
-          <div className="mt-8 p-4 bg-muted rounded-lg">
+          {/* Changed bg-muted to light-glass-pane */}
+          <div className="mt-8 p-4 rounded-lg light-glass-pane">
             <p className="text-sm text-muted-foreground">
               <strong>Note:</strong> This is a development help page for testing the Button component. 
               The component is located at <code>/src/components/common/Button/ButtonComponent.jsx</code> and uses default export.

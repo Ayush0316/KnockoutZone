@@ -69,7 +69,7 @@ const FormComponentsHelp = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background text-foreground p-8">
+    <div className="min-h-screen bg-transparent text-foreground p-8">
       <div className="max-w-4xl mx-auto">
         <div className="mb-12 text-center">
           <h1 className="text-4xl font-bold mb-2 text-primary">Form Components Documentation</h1>
