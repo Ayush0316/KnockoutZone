@@ -2,6 +2,10 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../store/slices/authSlice";
 import { useNavigate } from "react-router-dom";
+import Button from "../../components/common/Buttons/ButtonComponent";
+import { Input } from "../../components/common/Form/FormComponents";
+import { ROLES } from "../../utils/constants/roles";
+import { ADMIN_PATH } from "../../routes/admin/AdminPaths";
 
 const LoginPage = () => {
     const dispatch = useDispatch();
@@ -24,10 +28,10 @@ const LoginPage = () => {
             await dispatch(
                 login({
                     user: { name: "Mock User", email },
-                    role: "admin",
+                    role: ROLES.ADMIN,
                 })
             );
-            navigate("/dashboard");
+            navigate(ADMIN_PATH.DASHBOARD);
         } catch (err) {
             setError("Login failed. Please try again.");
         }
@@ -40,24 +44,31 @@ const LoginPage = () => {
                     LOGIN
                 </h2>
                 <div className="space-y-6">
-                    <div>
-                        <input
+                    <div
+                        className="[&_.light-glass-input]:bg-white/10 [&_.light-glass-input]:backdrop-blur-sm [&_.light-glass-input]:border-white/20 [&_.light-glass-input]:text-white [&_.light-glass-input]:px-6 [&_.light-glass-input]:py-4 [&_.light-glass-input]:rounded-2xl
+                    [&_.light-glass-pane]:rounded-2xl [&_.light-glass-input]:h-auto [&_.light-glass-input]:placeholder-white/60 [&_.light-glass-input]:focus:outline-none [&_.light-glass-input]:focus:ring-2 [&_.light-glass-input]:focus:ring-white/30 [&_.light-glass-input]:focus:border-white/40 [&_.light-glass-input]:transition-all [&_.light-glass-input]:duration-200 [&_.light-glass-input]:border [&_.light-glass-pane]:bg-transparent [&_label]:hidden [&_.text-red-600]:text-red-100 [&_button[type='button']]:text-white/60 [&_button[type='button']:hover]:text-white"
+                    >
+                        <Input
                             type="email"
                             placeholder="Email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                            className="w-full px-6 py-4 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-white/40 transition-all duration-200"
+                            id="email"
+                            name="email"
                         />
                     </div>
-                    <div>
-                        <input
+
+                    <div className="[&_.light-glass-input]:bg-white/10 [&_.light-glass-pane]:rounded-2xl [&_.light-glass-input]:backdrop-blur-sm [&_.light-glass-input]:border-white/20 [&_.light-glass-input]:text-white [&_.light-glass-input]:px-6 [&_.light-glass-input]:py-4 [&_.light-glass-input]:rounded-2xl [&_.light-glass-input]:h-auto [&_.light-glass-input]:placeholder-white/60 [&_.light-glass-input]:focus:outline-none [&_.light-glass-input]:focus:ring-2 [&_.light-glass-input]:focus:ring-white/30 [&_.light-glass-input]:focus:border-white/40 [&_.light-glass-input]:transition-all [&_.light-glass-input]:duration-200 [&_.light-glass-input]:border [&_.light-glass-pane]:bg-transparent [&_label]:hidden [&_.text-red-600]:text-red-100 [&_button[type='button']]:text-white/60 [&_button[type='button']:hover]:text-white [&_button[type='button']:focus]:!ring-transparent [&_button[type='button']:focus]:!ring-0">
+                        <Input
                             type="password"
                             placeholder="Password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
-                            className="w-full px-6 py-4 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-white/40 transition-all duration-200"
+                            id="password"
+                            name="password"
                         />
                     </div>
+
                     {error && (
                         <p className="text-red-100 text-sm text-center">
                             {error}
@@ -71,14 +82,13 @@ const LoginPage = () => {
                             Forgot password?
                         </button>
                     </div>
-                    <button
-                        type="button"
+                    <Button
                         onClick={handleLogin}
                         disabled={isLoading}
                         className="cursor-pointer w-full py-4 mt-1 rounded-2xl bg-gradient-to-r from-blue-500 to-blue-600 text-white font-medium text-lg shadow-lg hover:shadow-xl hover:from-blue-600 hover:to-blue-700 transform hover:scale-[1.02] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                     >
                         {isLoading ? "Logging in..." : "Login"}
-                    </button>
+                    </Button>
                 </div>
             </div>
         </div>
