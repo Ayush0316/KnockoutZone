@@ -39,8 +39,9 @@
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.hibernate.orm</groupId>
+			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-envers</artifactId>
+			<version>6.4.4.Final</version>
 		</dependency>
 
 		<dependency>
