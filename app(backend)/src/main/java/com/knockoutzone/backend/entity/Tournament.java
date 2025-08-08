@@ -1,7 +1,8 @@
 package com.knockoutzone.backend.entity;
 
 
-import com.knockoutzone.backend.entity.enums.*;
+
+//import com.knockoutzone.backend.entity.enums.*;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.envers.Audited;
