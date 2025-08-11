@@ -1,8 +1,12 @@
-# Background & Effects Guide (Markdown Version)
+
+---
+
+# Background & Effects Guide (Updated for Brighter PS Shapes)
 
 ## 1. Global Animated Background
 
-The animated background is a global component that runs once and persists across all pages. **Do not add it to individual pages.**
+The **animated PS shapes background** is a global component that runs once and persists across all pages.
+**Do not add it to individual pages.**
 
 **Implementation in `App.js`:**
 
@@ -16,7 +20,7 @@ function App() {
   return (
     <BrowserRouter>
       {/* Background is rendered here, globally */}
-      <Background/>
+      <Background />
       <AllRoutes />
     </BrowserRouter>
   );
@@ -25,15 +29,21 @@ function App() {
 export default App;
 ```
 
-- **Key point**: Place `` at the top level so it wraps the whole application.
+* **Key point:** Place `<Background />` at the top level so it sits *behind* your entire app.
+* The background contains large, brightened PS shapes with smooth bouncing motion and subtle glowing dots.
+
+---
 
 ## 2. Glassmorphic Pane Effect
 
-To give content boxes a frosted glass look, use the `light-glass-pane` utility class. This adds a semi-transparent background and blur.
+Use the `light-glass-pane` utility class to give content boxes a **frosted glass** look.
+This adds:
 
-**Usage:**
+* Semi-transparent white background
+* Soft blur
+* Slight border glow for contrast against the animated background.
 
-Replace any background utility classes (like `bg-card`) with `light-glass-pane`.
+**Usage Example:**
 
 **Before:**
 
@@ -41,7 +51,6 @@ Replace any background utility classes (like `bg-card`) with `light-glass-pane`.
 <div className="p-6 bg-card rounded-lg border">
   ...your content
 </div>
-
 ```
 
 **After:**
@@ -52,39 +61,45 @@ Replace any background utility classes (like `bg-card`) with `light-glass-pane`.
 </div>
 ```
 
-## 3. Revealing the Background
+---
 
-For the animated background to be visible, the main layout container of your page component **must be transparent**.
+## 3. Making Sure the Background is Visible
 
-**Hides Animation:**
+For the animated PS shapes to be visible, your page’s **main container must be transparent**.
 
-Using `bg-background` results in an opaque layer that covers the animation.
+### ❌ Hides the Animation
 
-```jsx
-// This page's main div will HIDE the animation
-
-<div className="min-h-screen bg-background ...">
-  ...
-</div>
-
-```
-
-**Shows Animation:**
-
-Using `bg-transparent` keeps the background visible.
+Opaque backgrounds like `bg-background` will cover the animation:
 
 ```jsx
-// This page's main div will SHOW the animation
-
-<div className="min-h-screen bg-transparent ...">
+<div className="min-h-screen bg-background">
   ...
 </div>
-
 ```
 
-**Rule of thumb:**  
-- The top-level `div` in your page components should use `bg-transparent`.
-- Smaller, non-glassmorphic content boxes can use opaque backgrounds (like `bg-card`) if needed.
+### ✅ Shows the Animation
 
-> **Live Demo:**  
-> The documentation page is a live demo. Its main container uses `bg-transparent`, and its content boxes use the `light-glass-pane` class.
+Transparent backgrounds let the animation show through:
+
+```jsx
+<div className="min-h-screen bg-transparent">
+  ...
+</div>
+```
+
+---
+
+## 4. Rule of Thumb
+
+* **Top-level page containers** → always use `bg-transparent` so the background can be seen.
+* **Individual content boxes** → use `light-glass-pane` for a frosted glass effect or `bg-card` for opaque panels if necessary.
+* **Never** re-import `<Background />` inside individual pages — it should be global.
+
+---
+
+> **Live Demo Tip:**
+> The documentation page itself uses `bg-transparent` for its main container, while its cards use `light-glass-pane` so the brighter, bouncing PS symbols glow softly behind them.
+
+---
+
+If you want, I can also add **an example preview screenshot** in this doc showing how the brighter shapes look under a glass pane. That would make this guide visually clearer.

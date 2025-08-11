@@ -1,41 +1,52 @@
-/* Using :root from a global file is fine, but for a self-contained
-   component, you can also define vars inside the main class */
-   #animated-background {
-    --background: hsl(210 20% 98%);
-    background: var(--background);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: -1;
-  }
-  
-  .circles {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .circles li {
-    position: absolute;
-    display: block;
-    list-style: none;
-    width: 20px;
-    height: 20px;
-    animation: animate 25s linear infinite;
-    bottom: -150px;
-  }
-  
-  .circles li:nth-child(odd) { background: hsla(210, 100%, 56%, 0.45); }
-  .circles li:nth-child(even) { background: hsla(270, 95%, 65%, 0.5); }
-  
-  @keyframes animate {
-      0% { transform: translateY(0) rotate(0deg); opacity: 1; border-radius: 0; }
-      100% { transform: translateY(-120vh) rotate(720deg); opacity: 0; border-radius: 50%; }
-  }
+#ps-background {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    #d8f6ff 0%,
+    #ebdeff 50%,
+    #ffe8f6 100%
+  );
+  z-index: -1;
+  overflow: hidden;
+}
+
+/* Triangle */
+.ps-shape.triangle {
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  background: #9ff5c4; /* brighter, saturated pastel green */
+  box-shadow: 0 0 25px rgba(74, 222, 128, 0.75);
+}
+
+/* Cross */
+.ps-shape.cross {
+  background: transparent;
+}
+.ps-shape.cross::before,
+.ps-shape.cross::after {
+  content: '';
+  position: absolute;
+  width: 28%;
+  height: 100%;
+  background: #ffc6c9; /* brighter pinkish red */
+  border-radius: 10px;
+  box-shadow: 0 0 25px rgba(248, 113, 113, 0.75);
+}
+.ps-shape.cross::before { transform: rotate(45deg); }
+.ps-shape.cross::after { transform: rotate(-45deg); }
+
+/* Square */
+.ps-shape.square {
+  background: transparent;
+  border: 10px solid #b7d7ff; /* brighter blue */
+  box-shadow: 0 0 25px rgba(96, 165, 250, 0.75);
+  border-radius: 12px;
+}
+
+/* Circle */
+.ps-shape.circle {
+  background: transparent;
+  border: 10px solid #ffffff; /* pure white */
+  border-radius: 50%;
+  box-shadow: 0 0 28px rgba(255, 255, 255, 0.9);
+}
