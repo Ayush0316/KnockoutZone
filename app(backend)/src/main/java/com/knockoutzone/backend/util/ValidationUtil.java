@@ -1,10 +1,12 @@
 package com.knockoutzone.backend.util;
 
+import org.springframework.stereotype.Component;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.regex.Pattern;
 
+@Component
 public class ValidationUtil {
 
     private static final Pattern EMAIL_PATTERN=Pattern.compile("^[\\w.-]+@[\\w.-]+\\.[A-Za-z]{2,}$");
@@ -14,7 +16,7 @@ public class ValidationUtil {
     private static final Pattern STRONG_PASSWORD_PATTERN = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$");
 
 
-    private ValidationUtil(){
+    public ValidationUtil(){
 
     }
 
