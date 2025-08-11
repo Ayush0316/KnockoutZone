@@ -6,13 +6,11 @@ import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.core.read.ListAppender;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.slf4j.LoggerFactory;
-
 import static org.junit.jupiter.api.Assertions.*;
 
-@Disabled
+
 class LoggerUtilTest {
 
     private ListAppender<ILoggingEvent> listAppender;
