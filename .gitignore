@@ -26,6 +26,7 @@ replay_pid*
 # IDE-specific folders
 .idea/
 .vscode/
+.metadata/
 *.iml
 
 # Deployment-related folders
