@@ -1,0 +1,1 @@
+INDEX VERSION 1.134+C:\Users\patel\Desktop\opensourceconto\KnockoutZone\app(backend)\.metadata\.plugins\org.eclipse.jdt.core
