@@ -6,8 +6,9 @@ import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.reflect.MethodSignature;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.util.ContentCachingRequestWrapper;
 
 import com.knockoutzone.backend.util.LoggerUtil;
@@ -18,33 +19,37 @@ import jakarta.servlet.http.HttpServletRequest;
 @Component
 public class LoggingAspect {
 
-    @Autowired
-    private HttpServletRequest request;
-
     @Before("@annotation(com.knockoutzone.backend.annotation.LogRequest)")
     public void logRequestDetails(JoinPoint joinPoint) {
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
         Class<?> clazz = signature.getDeclaringType();
 
-        LoggerUtil.info(clazz, "===== Incoming HTTP Request =====");
-        LoggerUtil.info(clazz, "Method: {}", signature.getName());
-        LoggerUtil.info(clazz, "Class: {}", clazz.getSimpleName());
-        LoggerUtil.info(clazz, "HTTP Method: {}", request.getMethod());
-        LoggerUtil.info(clazz, "URL Path: {}", request.getRequestURI());
+        HttpServletRequest request =
+            ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
 
-        LoggerUtil.info(clazz, "Headers:");
+        StringBuilder logMessage = new StringBuilder();
+        logMessage.append("\n===== Incoming HTTP Request =====\n");
+        logMessage.append("Method: ").append(signature.getName()).append("\n");
+        logMessage.append("Class: ").append(clazz.getSimpleName()).append("\n");
+        logMessage.append("HTTP Method: ").append(request.getMethod()).append("\n");
+        logMessage.append("URL Path: ").append(request.getRequestURI()).append("\n");
+        logMessage.append("Headers:\n");
+
         Enumeration<String> headerNames = request.getHeaderNames();
         while (headerNames.hasMoreElements()) {
-            String header = headerNames.nextElement();
-            LoggerUtil.info(clazz, "{}: {}", header, request.getHeader(header));
+            String headerName = headerNames.nextElement();
+            String headerValue = request.getHeader(headerName);
+            logMessage.append(headerName).append(": ").append(headerValue).append("\n");
         }
 
-        LoggerUtil.info(clazz, "Request Body: {}", extractRequestBody());
+        String body = getRequestBody(request);
+        logMessage.append("Request Body: ").append(body).append("\n");
+        logMessage.append("==================================");
 
-        LoggerUtil.info(clazz, "==================================");
+        LoggerUtil.info(clazz, logMessage.toString());
     }
 
-    private String extractRequestBody() {
+    private String getRequestBody(HttpServletRequest request) {
         if (request instanceof ContentCachingRequestWrapper) {
             ContentCachingRequestWrapper wrapper = (ContentCachingRequestWrapper) request;
             byte[] buf = wrapper.getContentAsByteArray();
