@@ -1,12 +1,32 @@
 package com.knockoutzone.backend.entity;
 
+import java.time.LocalDate;
 
-import com.knockoutzone.backend.entity.enums.*;
-import jakarta.persistence.*;
-import lombok.*;
 import org.hibernate.envers.Audited;
 
-import java.time.LocalDate;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.knockoutzone.backend.entity.enums.EventMode;
+import com.knockoutzone.backend.entity.enums.Platform;
+import com.knockoutzone.backend.entity.enums.ScheduleType;
+import com.knockoutzone.backend.entity.enums.TournamentStatus;
+import com.knockoutzone.backend.entity.enums.TournamentType;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Getter
@@ -23,6 +43,11 @@ public class Tournament extends AuditingEntity {
     private Long id;
     private String name;
 
+    @JsonBackReference
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "host_id", nullable = false)
+    private User host;
+    
     @Column(length = 1000)
     private String description;
     private String location;
