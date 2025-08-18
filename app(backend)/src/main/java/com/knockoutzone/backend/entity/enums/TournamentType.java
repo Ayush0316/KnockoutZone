@@ -1,6 +1,7 @@
 package com.knockoutzone.backend.entity.enums;
 
 public enum TournamentType {
-    SOLO, 
-    TEAM
+    SINGLE_ELIMINATION,
+    ROUND_ROBIN,
+    LEAGUE
 }

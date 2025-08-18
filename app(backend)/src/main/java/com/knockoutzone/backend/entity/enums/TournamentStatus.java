@@ -4,6 +4,5 @@ public enum TournamentStatus {
     UPCOMING,
     ONGOING,
     COMPLETED,
-    CANCELLED,
-    POSTPONED
+    CANCELLED
 }
