@@ -6,4 +6,6 @@ public enum EventMode {
     DUO,
     SQUAD,
     TEAM
+
 }
+
