@@ -18,7 +18,7 @@
         <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
             <fileNamePattern>${LOG_ARCHIVE}/application.%i.log</fileNamePattern>
             <minIndex>1</minIndex>
-            <maxIndex>30</maxIndex>
+            <maxIndex>21</maxIndex>
         </rollingPolicy>
 
         <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
@@ -31,5 +31,4 @@
         <appender-ref ref="CONSOLE" />
         <appender-ref ref="FILE" />
     </root>
-
 </configuration>
